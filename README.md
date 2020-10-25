@@ -5,7 +5,7 @@
 
 El flujo de trabajo que seguiremos será el representado a continuación:
 
-![Gitflow](/home/mariobalrod/Desktop/Gitflow.png)
+![Gitflow](./docs/Gitflow.png)
 
 
 
@@ -49,7 +49,7 @@ cd entorno-servidor/
 
 Por defecto tendremos como current branch a la rama master:
 
-![master](/home/mariobalrod/Desktop/defecto.png)
+![master](./docs/Defecto.png)
 
 
 
@@ -111,10 +111,10 @@ git merge branchName
 
 1. Ir al apartado Pull Request del repositorio de github y verás un botón verde "New pull request":
 
-![](/home/mariobalrod/Desktop/Pulll.png)
+![](./docs/PR.png)
 
 
 
 2. Este botón te redigirá a una vista como la siguiente, en la que tendrás que elegir la rama base (a la que quieres aplicar los cambios) y la rama compare (tu rama de trabajo):
 
-![](/home/mariobalrod/Desktop/ff.png)
+![](./docs/BranchesPR.png)
