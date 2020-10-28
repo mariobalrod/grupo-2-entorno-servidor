@@ -5,8 +5,8 @@
 # Primera práctica
 # ===========================================================
 
-#   APELLIDOS, NOMBRE:
-#   DNI:
+#   APELLIDOS, NOMBRE: AVILA CHACON, SERGIO
+#   DNI: 29498790W
 
 import math
 
@@ -32,7 +32,17 @@ import math
 # definición de listas por comprensión.
 # ---------------------------------------------------------------------------
 
-def cuadrados(l):
+def cuadradosComprensionLista (l):
+    
+    l = [x*x for x in l]
+    return print(l)
+
+
+def cuadradoBucle (l):
+    for x in range(0,len(l)):
+        l[x] = l[x]**2
+
+    return print(l)
 
 
 # -----------
