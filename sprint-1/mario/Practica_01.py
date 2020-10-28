@@ -100,8 +100,8 @@ def suma_cuadrados(l):
 # >>> suma_fórmula([2,4,6,8,10])
 # 110
 
-#def suma_formula(l):
-
+def suma_formula(l):
+    return sum([i*l[i] for i in range(len(l))])
 
 # c) Dados dos listas numéricas de la misma longitud, representado dos puntos
 #    n-dimensionales, calcular la distancia euclídea entre ellos.
