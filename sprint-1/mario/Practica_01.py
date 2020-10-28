@@ -89,8 +89,8 @@ def vocales_consonantes(s):
 # >>> suma_cuadrados([9,4,2,6,8,1])
 # 120
 
-#def suma_cuadrados(l):
-
+def suma_cuadrados(l):
+    return sum([i**2 for i in l if  i % 2 == 0])
 
 # b) Dada una lista de números l=[a(1),...,a(n)], calcular el sumatorio de i=1
 #    hasta n de i*a(i).
