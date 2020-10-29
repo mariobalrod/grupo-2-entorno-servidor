@@ -67,7 +67,16 @@ def cuadradoBucle (l):
 # A es vocal
 # ---------------------------------------------------------------------------
 
-def vocales_consonantes(s):
+def vocalesConsonantes (palabra):
+    palabra_mayuscula = palabra.upper()
+
+    vocales = ['A','E','I','O','U']
+    
+    for x in palabra_mayuscula:
+        if x in vocales:
+            print(x,' Es vocal')
+        else:
+            print(x,' Es consonante')
 
 
 # -----------
