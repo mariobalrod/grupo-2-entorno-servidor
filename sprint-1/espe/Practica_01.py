@@ -5,8 +5,8 @@
 # Primera práctica
 # ===========================================================
 
-#   APELLIDOS, NOMBRE:
-#   DNI:
+#   APELLIDOS, NOMBRE: Esperanza Del Junco Pérez
+#   DNI: 49137125V
 
 import math
 
@@ -33,7 +33,8 @@ import math
 # ---------------------------------------------------------------------------
 
 def cuadrados(l):
-
+    
+    
 
 # -----------
 # EJERCICIO 2
@@ -58,7 +59,12 @@ def cuadrados(l):
 # ---------------------------------------------------------------------------
 
 def vocales_consonantes(s):
-
+    vocales = "AEIOU"
+    for i in s:
+        if vocales.find(i)==-1:
+            print('{0} es consonante'.format(i))
+        else:
+            print('{0} es vocal'.format(i)) 
 
 # -----------
 # EJERCICIO 3
