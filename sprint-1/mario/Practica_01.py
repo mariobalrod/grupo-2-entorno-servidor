@@ -101,7 +101,7 @@ def suma_cuadrados(l):
 # 110
 
 def suma_formula(l):
-    return sum([i*l[i] for i in range(len(l))])
+    return sum([(i+1)*l[i] for i in range(len(l))])
 
 # c) Dados dos listas numéricas de la misma longitud, representado dos puntos
 #    n-dimensionales, calcular la distancia euclídea entre ellos.
@@ -122,8 +122,8 @@ def distancia(l0,l1):
 # >>> map_mio(abs,[-2,-3,-4,-1])
 # [2, 3, 4, 1]
 
-#def map_mio(f,l):
-
+def map_mio(f,l):
+    return [f(i) for i in l]
 
 # e) Dada un par de listas (de la misma longitud) y una funcion de dos
 #    argumentos, devolver la lista de los resultados de aplicar la funcion a
