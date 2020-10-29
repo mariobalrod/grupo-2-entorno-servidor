@@ -145,8 +145,8 @@ def map2_mio(f,l0,l1):
 # >>> m3_no_nulos([4,0,6,7,0,9,18])
 # 3
 
-#def m3_no_nulos(l):
-
+def m3_no_nulos(l):
+    return len([x for x in l if x % 3 == 0 and x != 0])
 
 # f) Dadas dos listas de la misma longitud, contar el número de posiciones en
 #    las que coinciden los elementos de ambas listas.
@@ -156,8 +156,8 @@ def map2_mio(f,l0,l1):
 # >>> cuenta_coincidentes([4,2,6,8,9,3],[3,2,1,8,9,6])
 # 3
 
-#def cuenta_coincidentes(l0,l1):
-
+def cuenta_coincidentes(l0,l1):
+    return len([i for i in range(len(l0)) if l0[i] == l1[i]])
 
 # g) Dadas dos listas de la misma longitud, devolver un diccionario que tiene
 # como claves las posiciones  en las que coinciden los elementos de ambas
@@ -170,8 +170,8 @@ def map2_mio(f,l0,l1):
 # >>> dic_posiciones_coincidentes([2,8,1,2,1,3],[1,8,1,2,1,6])
 # {1: 8, 2: 1, 3: 2, 4: 1}
 
-#def dic_posiciones_coincidentes(l0,l1):
-
+def dic_posiciones_coincidentes(l0,l1):
+    return dict([[i, l0[i]] for i in range(len(l0)) if l0[i] == l1[i]])
 
 # -----------
 # EJERCICIO 4
