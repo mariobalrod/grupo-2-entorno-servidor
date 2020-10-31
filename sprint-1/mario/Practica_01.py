@@ -193,12 +193,14 @@ def dic_posiciones_coincidentes(l0,l1):
 # El 28 es perfecto y sus divisores son [1, 2, 4, 7, 14]
 # ------------------------------------------------------------------------
 
-#def divisores(x):
+def divisores(x):
+    return [i for i in range(1, x) if x % i == 0]
 
-
-#def filtra_perfectos(a,b,f):
-
-
+def filtra_perfectos(a,b,f):
+    for x in range(a, b+1):
+        if (x == sum(divisores(x)) and f(x)):
+            print("El " , x , " es perfecto y sus divisores son " , divisores(x))
+            
 ##    for x in range(a,b+1):
 ##        if sum(multiplos(x)) == x:
 ##            if f(x):
