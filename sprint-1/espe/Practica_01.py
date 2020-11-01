@@ -159,7 +159,8 @@ def m3_no_nulos(l):
 # >>> cuenta_coincidentes([4,2,6,8,9,3],[3,2,1,8,9,6])
 # 3
 
-#def cuenta_coincidentes(l0,l1):
+def cuenta_coincidentes(l0,l1):
+    return len([ i for i in range(len(l0)) if l0[i]==l1[i]])
 
 
 # h) Dadas dos listas de la misma longitud, devolver un diccionario que tiene
