@@ -241,8 +241,8 @@ d1={"a":5,"b":10,"c":12,"d":11,"e":15,"f":20,"g":15,"h":9,"i":7,"j":2}
 def histograma_horizontal(d1):
     for x,y in sorted(d1.items()):
      print( x , ": ", y * '*')
-     
-histograma_horizontal(d1)
+
+
 # -----------
 # EJERCICIO 6
 # -----------
@@ -281,8 +281,24 @@ histograma_horizontal(d1)
 #         función "sorted" sobre las claves
 # ---------------------------------------------------------------------------
 
-#d2={"a":5,"b":7,"c":9,"d":12,"e":15,"f":20,"g":15,"h":9,"i":7,"j":2}
+d2={"a":5,"b":7,"c":9,"d":12,"e":15,"f":20,"g":15,"h":9,"i":7,"j":2}
 
 #Buscamos el máximo de todos para saber por cual empezar.
 
-#def histograma_vertical(d2):
+def histograma_vertical(d2): 
+    current_value = d2[max(d2, key=d2.get)]
+
+    while current_value != 0:
+        for x, y in sorted(d2.items()):
+
+            if y >= current_value: 
+                print(' *', end='')
+
+            else:
+                print('  ', end='')
+
+        print('')
+        
+        current_value = current_value - 1
+
+histograma_vertical(d2)
