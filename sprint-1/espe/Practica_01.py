@@ -135,7 +135,8 @@ def map_mio(f,l):
 # >>> map2_mio((lambda x,y: x+y) ,[1,2,3,4],[5,2,7,9])
 # [6, 4, 10, 13]
 
-#def map2_mio(f,l0,l1):
+def map2_mio(f,l0,l1):
+    return[ f(l0[x], l1[x]) for x in range(len(l0)) ]
 
 
 # f) Dada una lista de números, contar el número de elementos que sean múltiplos
