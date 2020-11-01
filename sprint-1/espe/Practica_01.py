@@ -111,8 +111,8 @@ def suma_formula(l):
 # >>> distancia([3,1,2],[1,2,1])
 # 2.449489742783178
 
-#def distancia(l0,l1):
-
+def distancia(l0,l1):
+    return math.sqrt(abs(sum([(i-x) for i in l0 for x in l1])))
 
 # d) Dada una lista y una funcion de un argumento, devolver la lista de los
 #    resultados de aplicar la funcion a cada elelmento de la lista.
