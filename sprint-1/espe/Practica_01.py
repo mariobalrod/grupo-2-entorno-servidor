@@ -174,7 +174,8 @@ def cuenta_coincidentes(l0,l1):
 # >>> dic_posiciones_coincidentes([2,8,1,2,1,3],[1,8,1,2,1,6])
 # {1: 8, 2: 1, 3: 2, 4: 1}
 
-#def dic_posiciones_coincidentes(l0,l1):
+def dic_posiciones_coincidentes(l0,l1):
+    return {i:l1[i] for i in range(len(l0)) if l0[i]==l1[i]}
 
 
 # -----------
