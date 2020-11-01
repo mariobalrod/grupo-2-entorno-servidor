@@ -207,11 +207,6 @@ def filtra_perfectos(a,b,f):
     for i in l1:
         print("El {0} es perfecto y sus divisores son {1}".format(i,divisores(i)))
 
-
-##    for x in range(a,b+1):
-##        if sum(multiplos(x)) == x:
-##            if f(x):
-##                print ( "El " , x , " es perfecto y sus divisores son " , multiplos(x))
 # -----------
 # EJERCICIO 5
 # -----------
@@ -243,12 +238,11 @@ def filtra_perfectos(a,b,f):
 
 d1={"a":5,"b":10,"c":12,"d":11,"e":15,"f":20,"g":15,"h":9,"i":7,"j":2}
 
-#def histograma_horizontal(d1):
-
-
-##    for x,y in sorted(d1.items()):
-##        print( x , ": ", y * '*')
-
+def histograma_horizontal(d1):
+    for x,y in sorted(d1.items()):
+     print( x , ": ", y * '*')
+     
+histograma_horizontal(d1)
 # -----------
 # EJERCICIO 6
 # -----------
@@ -287,7 +281,7 @@ d1={"a":5,"b":10,"c":12,"d":11,"e":15,"f":20,"g":15,"h":9,"i":7,"j":2}
 #         función "sorted" sobre las claves
 # ---------------------------------------------------------------------------
 
-d2={"a":5,"b":7,"c":9,"d":12,"e":15,"f":20,"g":15,"h":9,"i":7,"j":2}
+#d2={"a":5,"b":7,"c":9,"d":12,"e":15,"f":20,"g":15,"h":9,"i":7,"j":2}
 
 #Buscamos el máximo de todos para saber por cual empezar.
 
