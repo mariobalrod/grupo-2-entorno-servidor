@@ -122,7 +122,8 @@ def distancia(l0,l1):
 # >>> map_mio(abs,[-2,-3,-4,-1])
 # [2, 3, 4, 1]
 
-#def map_mio(f,l):
+def map_mio(f,l):
+    return [f(i) for i in l]
 
 
 # e) Dada un par de listas (de la misma longitud) y una funcion de dos
