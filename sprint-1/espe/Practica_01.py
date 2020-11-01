@@ -147,10 +147,11 @@ def map2_mio(f,l0,l1):
 # >>> m3_no_nulos([4,0,6,7,0,9,18])
 # 3
 
-#def m3_no_nulos(l):
+def m3_no_nulos(l):
+    return len([i for i in l if i %3==0 and i!=0])
 
 
-# f) Dadas dos listas de la misma longitud, contar el número de posiciones en
+# g) Dadas dos listas de la misma longitud, contar el número de posiciones en
 #    las que coinciden los elementos de ambas listas.
 
 # Ejemplo:
@@ -161,7 +162,7 @@ def map2_mio(f,l0,l1):
 #def cuenta_coincidentes(l0,l1):
 
 
-# g) Dadas dos listas de la misma longitud, devolver un diccionario que tiene
+# h) Dadas dos listas de la misma longitud, devolver un diccionario que tiene
 # como claves las posiciones  en las que coinciden los elementos de ambas
 # listas, y como valor de esas claves, el elemento coincidente.
 
