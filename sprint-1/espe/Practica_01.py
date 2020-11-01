@@ -33,8 +33,13 @@ import math
 # ---------------------------------------------------------------------------
 
 def cuadrados(l):
-    
-    
+    for i in range(len(l)):
+        l[i] = l[i]*l[i]
+
+    return l
+
+def cuadradosC(l):  
+    return [ i*i for i in l ]
 
 # -----------
 # EJERCICIO 2
@@ -59,6 +64,7 @@ def cuadrados(l):
 # ---------------------------------------------------------------------------
 
 def vocales_consonantes(s):
+    s = s.upper()
     vocales = "AEIOU"
     for i in s:
         if vocales.find(i)==-1:
@@ -80,7 +86,7 @@ def vocales_consonantes(s):
 # >>> suma_cuadrados([9,4,2,6,8,1])
 # 120
 
-def suma_cuadrados(l):
+#def suma_cuadrados(l):
 
 
 # b) Dada una lista de números l=[a(1),...,a(n)], calcular el sumatorio de i=1
@@ -91,7 +97,7 @@ def suma_cuadrados(l):
 # >>> suma_fórmula([2,4,6,8,10])
 # 110
 
-def suma_formula(l):
+#def suma_formula(l):
 
 
 # c) Dados dos listas numéricas de la misma longitud, representado dos puntos
@@ -102,7 +108,7 @@ def suma_formula(l):
 # >>> distancia([3,1,2],[1,2,1])
 # 2.449489742783178
 
-def distancia(l0,l1):
+#def distancia(l0,l1):
 
 
 # d) Dada una lista y una funcion de un argumento, devolver la lista de los
@@ -113,7 +119,7 @@ def distancia(l0,l1):
 # >>> map_mio(abs,[-2,-3,-4,-1])
 # [2, 3, 4, 1]
 
-def map_mio(f,l):
+#def map_mio(f,l):
 
 
 # e) Dada un par de listas (de la misma longitud) y una funcion de dos
@@ -125,7 +131,7 @@ def map_mio(f,l):
 # >>> map2_mio((lambda x,y: x+y) ,[1,2,3,4],[5,2,7,9])
 # [6, 4, 10, 13]
 
-def map2_mio(f,l0,l1):
+#def map2_mio(f,l0,l1):
 
 
 # f) Dada una lista de números, contar el número de elementos que sean múltiplos
@@ -136,7 +142,7 @@ def map2_mio(f,l0,l1):
 # >>> m3_no_nulos([4,0,6,7,0,9,18])
 # 3
 
-def m3_no_nulos(l):
+#def m3_no_nulos(l):
 
 
 # f) Dadas dos listas de la misma longitud, contar el número de posiciones en
@@ -147,7 +153,7 @@ def m3_no_nulos(l):
 # >>> cuenta_coincidentes([4,2,6,8,9,3],[3,2,1,8,9,6])
 # 3
 
-def cuenta_coincidentes(l0,l1):
+#def cuenta_coincidentes(l0,l1):
 
 
 # g) Dadas dos listas de la misma longitud, devolver un diccionario que tiene
@@ -161,7 +167,7 @@ def cuenta_coincidentes(l0,l1):
 # >>> dic_posiciones_coincidentes([2,8,1,2,1,3],[1,8,1,2,1,6])
 # {1: 8, 2: 1, 3: 2, 4: 1}
 
-def dic_posiciones_coincidentes(l0,l1):
+#def dic_posiciones_coincidentes(l0,l1):
 
 
 # -----------
@@ -184,10 +190,10 @@ def dic_posiciones_coincidentes(l0,l1):
 # El 28 es perfecto y sus divisores son [1, 2, 4, 7, 14]
 # ------------------------------------------------------------------------
 
-def divisores(x):
+#def divisores(x):
 
 
-def filtra_perfectos(a,b,f):
+#def filtra_perfectos(a,b,f):
 
 
 ##    for x in range(a,b+1):
@@ -225,7 +231,7 @@ def filtra_perfectos(a,b,f):
 
 d1={"a":5,"b":10,"c":12,"d":11,"e":15,"f":20,"g":15,"h":9,"i":7,"j":2}
 
-def histograma_horizontal(d1):
+#def histograma_horizontal(d1):
 
 
 ##    for x,y in sorted(d1.items()):
@@ -273,4 +279,4 @@ d2={"a":5,"b":7,"c":9,"d":12,"e":15,"f":20,"g":15,"h":9,"i":7,"j":2}
 
 #Buscamos el máximo de todos para saber por cual empezar.
 
-def histograma_vertical(d2):
+#def histograma_vertical(d2):
