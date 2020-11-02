@@ -319,4 +319,19 @@ d2={"a":5,"b":7,"c":9,"d":12,"e":15,"f":20,"g":15,"h":9,"i":7,"j":2}
 
 #Buscamos el máximo de todos para saber por cual empezar.
 
+
 def histograma_vertical(d2):
+    valor_actual = d2[max(d2, key=d2.get)]
+
+    while valor_actual != 0:
+        for _, y in sorted(d2.items()):
+
+            if y >= valor_actual: 
+                print(' *', end='')
+
+            else:
+                print('  ', end='')
+
+        print('')
+        
+        valor_actual = valor_actual - 1
