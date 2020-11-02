@@ -225,9 +225,13 @@ def dic_posiciones_coincidentes(lista1,lista2):
 # ------------------------------------------------------------------------
 
 def divisores(x):
+    return [i for i in range(1, x) if x % i == 0]
 
 
-def filtra_perfectos(a,b,f):
+def filtra_perfectos(numeroInicial,numeroFinal,funcion):
+    for x in range(numeroInicial, numeroFinal+1):
+        if (x == sum(divisores(x)) and funcion(x)):
+            print("El " , x , " es perfecto y sus divisores son " , divisores(x))
 
 
 ##    for x in range(a,b+1):
