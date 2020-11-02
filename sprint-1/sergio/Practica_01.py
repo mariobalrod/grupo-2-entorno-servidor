@@ -93,7 +93,11 @@ def vocalesConsonantes (palabra):
 # >>> suma_cuadrados([9,4,2,6,8,1])
 # 120
 
-def suma_cuadrados(l):
+def sumCuadrados(numeros):
+    
+    numeros = sum([x*x for x in numeros if x%2 == 0])
+    
+    return print('resultado', numeros)
 
 
 # b) Dada una lista de números l=[a(1),...,a(n)], calcular el sumatorio de i=1
@@ -104,7 +108,11 @@ def suma_cuadrados(l):
 # >>> suma_fórmula([2,4,6,8,10])
 # 110
 
-def suma_formula(l):
+def sumFormula(numeros):
+ 
+    numeros = sum([(x+1) *numeros[x] for x in range(len(numeros))])
+
+    return print('resultado', numeros)
 
 
 # c) Dados dos listas numéricas de la misma longitud, representado dos puntos
@@ -115,7 +123,13 @@ def suma_formula(l):
 # >>> distancia([3,1,2],[1,2,1])
 # 2.449489742783178
 
-def distancia(l0,l1):
+def distancia(lista1,lista2):
+    import math
+    if len(lista1) == len(lista2):
+        solucion = math.sqrt(sum([(lista1[x] - lista2[x]) for x in range(len(lista1)) for x in range(len(lista2))]))
+        return print(solucion)         
+    else:
+        return print('ERROR:Se necesitan listas de la misma longitud')
 
 
 # d) Dada una lista y una funcion de un argumento, devolver la lista de los
@@ -126,9 +140,13 @@ def distancia(l0,l1):
 # >>> map_mio(abs,[-2,-3,-4,-1])
 # [2, 3, 4, 1]
 
-def map_mio(f,l):
+def map_mio(funcion, lista):
+    
+    lista = [funcion(x) for x in lista]
 
+    return print (lista)
 
+#EJERCICIO UTILIZANDO ZIP
 # e) Dada un par de listas (de la misma longitud) y una funcion de dos
 #    argumentos, devolver la lista de los resultados de aplicar la funcion a
 #    cada par de elementos que ocupan la misma posición en las listas de
@@ -138,8 +156,10 @@ def map_mio(f,l):
 # >>> map2_mio((lambda x,y: x+y) ,[1,2,3,4],[5,2,7,9])
 # [6, 4, 10, 13]
 
-def map2_mio(f,l0,l1):
-
+def map_mio2(funcion, lista1, lista2):
+    
+    solucion = [funcion(x,y) for x,y in zip(lista1,lista2)  ]
+    return print (solucion)
 
 # f) Dada una lista de números, contar el número de elementos que sean múltiplos
 #    de tres y distintos de cero.
@@ -149,7 +169,11 @@ def map2_mio(f,l0,l1):
 # >>> m3_no_nulos([4,0,6,7,0,9,18])
 # 3
 
-def m3_no_nulos(l):
+def map_no_nulos(lista):
+    
+    solucion = sum([lista.count(x) for x in lista if x%3==0 and x !=0])
+    return print(solucion)
+
 
 
 # f) Dadas dos listas de la misma longitud, contar el número de posiciones en
@@ -160,8 +184,9 @@ def m3_no_nulos(l):
 # >>> cuenta_coincidentes([4,2,6,8,9,3],[3,2,1,8,9,6])
 # 3
 
-def cuenta_coincidentes(l0,l1):
-
+def cuenta_coincidentes(lista1,lista2):
+    solucion = len([x for x in range(len(lista1)) if lista1[x] == lista2[x]])
+    return print(solucion)
 
 # g) Dadas dos listas de la misma longitud, devolver un diccionario que tiene
 # como claves las posiciones  en las que coinciden los elementos de ambas
@@ -174,7 +199,9 @@ def cuenta_coincidentes(l0,l1):
 # >>> dic_posiciones_coincidentes([2,8,1,2,1,3],[1,8,1,2,1,6])
 # {1: 8, 2: 1, 3: 2, 4: 1}
 
-def dic_posiciones_coincidentes(l0,l1):
+def dic_posiciones_coincidentes(lista1,lista2):
+    solucion = dict([[x,lista1[x]] for x in range(len(lista1)) if lista1[x] == lista2[x]])
+    return print (solucion)
 
 
 # -----------
