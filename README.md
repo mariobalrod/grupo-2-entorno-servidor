@@ -5,7 +5,7 @@
 
 El flujo de trabajo que seguiremos será el representado a continuación:
 
-![Gitflow](./docs/Gitflow.png)
+![Gitflow](./docs/Gitflow2.png)
 
 
 
