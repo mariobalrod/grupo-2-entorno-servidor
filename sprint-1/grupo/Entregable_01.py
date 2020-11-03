@@ -7,14 +7,14 @@
 
 # GRUPO:
 # INTEGRANTE 1:
-#   APELLIDOS, NOMBRE:
-#   DNI:
+#   APELLIDOS, NOMBRE: Ballestero Rodriguez, Mario
+#   DNI: 29533046B
 # INTEGRANTE 2:
-#   APELLIDOS, NOMBRE:
-#   DNI:
+#   APELLIDOS, NOMBRE: Del Junco Pérez, Esperanza
+#   DNI: 49137125V
 # INTEGRANTE 3:
-#   APELLIDOS, NOMBRE:
-#   DNI:
+#   APELLIDOS, NOMBRE: Ávila Chacón, Sergio
+#   DNI: 29498790W
 
 # Escribir el código Python de las funciones que se piden en el
 # espacio que se indica en cada ejercicio.
@@ -178,6 +178,85 @@ def sustituye_patrones(frase, fichero):
 # - Las líneas de salida del ejemplo han sido impresas con la siguiente cadena
 #   de formateo:  "{0:>8} {1:<30} {2:<15} {3}"
 # ----------------------------------------------------------------------------------
+
+import re
+
+def is_user_line(list):
+    if len(list) == 5 and len(list[0]) == 8:
+        return True
+
+    else:
+        return False
+
+    
+def set_name(nombre1, nombre2):
+    if len(nombre2) > 0:
+        return nombre1 + ' ' + nombre2
+    
+    else: 
+        return nombre1
+
+
+def set_usernames(users):
+    usernames = []
+
+    for user in users:
+
+        nombres = user['nombre'].split(' ')
+
+        apellidos = user['apellidos'].split(' ')
+
+        if len(nombres) == 2:
+            username = nombres[0][0]+nombres[1][0]+apellidos[0][0:3]+apellidos[1][0:3]
+        
+        else: 
+            username = nombres[0][0]+apellidos[0][0:3]+apellidos[1][0:3]
+
+
+        while username.lower() in usernames:
+            numbers = re.findall(r'[0-9]+', username)
+
+            if len(numbers) > 0:
+                new_number_name = int(numbers[len(numbers)-1]) + 1
+
+                username = username.replace(numbers[len(numbers)-1], str(new_number_name))
+                
+            else:
+                username = username+str(1)
+
+
+        usernames.append(username.lower())
+
+        user['usuario'] = username.lower()
+
+
+def imprime_usuarios(file):
+
+    users = []
+    f = open(file, 'r')
+
+    for line in f:
+        items = line.split(':')
+
+        if is_user_line(items):
+            new_user = {
+                'dni': items[0],
+                'apellidos': items[3] + ' ' + items[4].replace('\n', ''),
+                'nombre': set_name(items[1], items[2]),
+                'usuario': ''
+            }
+
+            users.append(new_user)
+
+    set_usernames(users)
+
+    print('DNI      Apellidos                      Nombre          Usuario')
+    print('-------- ------------------------------ --------------- --------')
+
+    for user in users:
+        print(f"{user['dni']:>8} {user['apellidos']:<30} {user['nombre']:<15} {user['usuario']}")
+
+    f.close()
 
 # -----------------------------------------------------------------------------
 # EJERCICIO 3) EL DECODIFICADOR
