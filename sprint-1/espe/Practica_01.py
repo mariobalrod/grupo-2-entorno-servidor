@@ -301,4 +301,3 @@ def histograma_vertical(d2):
         
         current_value = current_value - 1
 
-histograma_vertical(d2)
