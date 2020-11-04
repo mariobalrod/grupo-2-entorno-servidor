@@ -95,7 +95,53 @@
 # Los hijos de Jesus son Antonio y Ivan
 # Los hijos de Francisco son Jose y Rafael
 
+import re
+
 def sustituye_patrones(frase, fichero):
+    archivo = open(fichero, 'r')
+    lineas = archivo.readlines()
+    numeros = ['0','1','2','3','4','5','6','7','8','9']
+
+#==================================================================================================    
+    #Con esto controlamos que no haya un numero en la frase superior a 9
+    #Hemos importado "re" y usamos .findall para buscar solo los numeros.
+    #.findall --> nos devuelve una lista con los numeros del array
+    numeros_frase = re.findall(r'\d+', frase)
+    for x in numeros_frase:
+        if int(x) > 9:
+            print('Los numeros que introduzca en la frase han de ser IGUALES o INFERIORES que 9')
+            exit()      
+#==================================================================================================
+    
+    controlador = len(lineas)
+    while (controlador != 0):
+        numero = 0
+        eliminarN = ''
+        frase_auxiliar = ''
+
+        for x in range(len(lineas)):
+            nombres = lineas[controlador-1].split(':')
+        for x in range(len(nombres)):
+            numero = numero + 1
+
+#==================================================================================================        
+        #Esto esta echo para eliminar "\n" de los ultimos nombres de cada linea del archivo   
+        eliminarN = ' '.join(nombres)
+        eliminarN = eliminarN.replace('\n',' ').replace('\r','')
+        lista_nombres_correcta = eliminarN.split()
+#==================================================================================================
+    
+        for x in range(len(frase)):
+            if frase[x] in numeros:
+                if int(frase[x]) >= numero:
+                    frase_auxiliar = frase_auxiliar + frase[x]
+                else:
+                    frase_auxiliar = frase_auxiliar + lista_nombres_correcta[int(frase[x])]
+            else:
+                frase_auxiliar = frase_auxiliar + frase[x]
+        
+        controlador = controlador - 1
+        print(frase_auxiliar)
 
 # Nótese que:
 # - Supondremos que en la frase de entrada las palabras se separan mediante un

@@ -5,8 +5,8 @@
 # Primera práctica
 # ===========================================================
 
-#   APELLIDOS, NOMBRE:
-#   DNI:
+#   APELLIDOS, NOMBRE: AVILA CHACON, SERGIO
+#   DNI: 29498790W
 
 import math
 
@@ -32,7 +32,17 @@ import math
 # definición de listas por comprensión.
 # ---------------------------------------------------------------------------
 
-def cuadrados(l):
+def cuadradosComprensionLista (l):
+    
+    l = [x*x for x in l]
+    return print(l)
+
+
+def cuadradoBucle (l):
+    for x in range(0,len(l)):
+        l[x] = l[x]**2
+
+    return print(l)
 
 
 # -----------
@@ -57,7 +67,16 @@ def cuadrados(l):
 # A es vocal
 # ---------------------------------------------------------------------------
 
-def vocales_consonantes(s):
+def vocalesConsonantes (palabra):
+    palabra_mayuscula = palabra.upper()
+
+    vocales = ['A','E','I','O','U']
+    
+    for x in palabra_mayuscula:
+        if x in vocales:
+            print(x,' Es vocal')
+        else:
+            print(x,' Es consonante')
 
 
 # -----------
@@ -74,7 +93,11 @@ def vocales_consonantes(s):
 # >>> suma_cuadrados([9,4,2,6,8,1])
 # 120
 
-def suma_cuadrados(l):
+def sumCuadrados(numeros):
+    
+    numeros = sum([x*x for x in numeros if x%2 == 0])
+    
+    return print('resultado', numeros)
 
 
 # b) Dada una lista de números l=[a(1),...,a(n)], calcular el sumatorio de i=1
@@ -85,7 +108,11 @@ def suma_cuadrados(l):
 # >>> suma_fórmula([2,4,6,8,10])
 # 110
 
-def suma_formula(l):
+def sumFormula(numeros):
+ 
+    numeros = sum([(x+1) *numeros[x] for x in range(len(numeros))])
+
+    return print('resultado', numeros)
 
 
 # c) Dados dos listas numéricas de la misma longitud, representado dos puntos
@@ -96,7 +123,13 @@ def suma_formula(l):
 # >>> distancia([3,1,2],[1,2,1])
 # 2.449489742783178
 
-def distancia(l0,l1):
+def distancia(lista1,lista2):
+    import math
+    if len(lista1) == len(lista2):
+        solucion = math.sqrt(sum([(lista1[x] - lista2[x]) for x in range(len(lista1)) for x in range(len(lista2))]))
+        return print(solucion)         
+    else:
+        return print('ERROR:Se necesitan listas de la misma longitud')
 
 
 # d) Dada una lista y una funcion de un argumento, devolver la lista de los
@@ -107,9 +140,13 @@ def distancia(l0,l1):
 # >>> map_mio(abs,[-2,-3,-4,-1])
 # [2, 3, 4, 1]
 
-def map_mio(f,l):
+def map_mio(funcion, lista):
+    
+    lista = [funcion(x) for x in lista]
 
+    return print (lista)
 
+#EJERCICIO UTILIZANDO ZIP
 # e) Dada un par de listas (de la misma longitud) y una funcion de dos
 #    argumentos, devolver la lista de los resultados de aplicar la funcion a
 #    cada par de elementos que ocupan la misma posición en las listas de
@@ -119,8 +156,10 @@ def map_mio(f,l):
 # >>> map2_mio((lambda x,y: x+y) ,[1,2,3,4],[5,2,7,9])
 # [6, 4, 10, 13]
 
-def map2_mio(f,l0,l1):
-
+def map_mio2(funcion, lista1, lista2):
+    
+    solucion = [funcion(x,y) for x,y in zip(lista1,lista2)  ]
+    return print (solucion)
 
 # f) Dada una lista de números, contar el número de elementos que sean múltiplos
 #    de tres y distintos de cero.
@@ -130,7 +169,11 @@ def map2_mio(f,l0,l1):
 # >>> m3_no_nulos([4,0,6,7,0,9,18])
 # 3
 
-def m3_no_nulos(l):
+def map_no_nulos(lista):
+    
+    solucion = sum([lista.count(x) for x in lista if x%3==0 and x !=0])
+    return print(solucion)
+
 
 
 # f) Dadas dos listas de la misma longitud, contar el número de posiciones en
@@ -141,8 +184,9 @@ def m3_no_nulos(l):
 # >>> cuenta_coincidentes([4,2,6,8,9,3],[3,2,1,8,9,6])
 # 3
 
-def cuenta_coincidentes(l0,l1):
-
+def cuenta_coincidentes(lista1,lista2):
+    solucion = len([x for x in range(len(lista1)) if lista1[x] == lista2[x]])
+    return print(solucion)
 
 # g) Dadas dos listas de la misma longitud, devolver un diccionario que tiene
 # como claves las posiciones  en las que coinciden los elementos de ambas
@@ -155,7 +199,9 @@ def cuenta_coincidentes(l0,l1):
 # >>> dic_posiciones_coincidentes([2,8,1,2,1,3],[1,8,1,2,1,6])
 # {1: 8, 2: 1, 3: 2, 4: 1}
 
-def dic_posiciones_coincidentes(l0,l1):
+def dic_posiciones_coincidentes(lista1,lista2):
+    solucion = dict([[x,lista1[x]] for x in range(len(lista1)) if lista1[x] == lista2[x]])
+    return print (solucion)
 
 
 # -----------
@@ -179,9 +225,13 @@ def dic_posiciones_coincidentes(l0,l1):
 # ------------------------------------------------------------------------
 
 def divisores(x):
+    return [i for i in range(1, x) if x % i == 0]
 
 
-def filtra_perfectos(a,b,f):
+def filtra_perfectos(numeroInicial,numeroFinal,funcion):
+    for x in range(numeroInicial, numeroFinal+1):
+        if (x == sum(divisores(x)) and funcion(x)):
+            print("El " , x , " es perfecto y sus divisores son " , divisores(x))
 
 
 ##    for x in range(a,b+1):
@@ -220,6 +270,8 @@ def filtra_perfectos(a,b,f):
 d1={"a":5,"b":10,"c":12,"d":11,"e":15,"f":20,"g":15,"h":9,"i":7,"j":2}
 
 def histograma_horizontal(d1):
+    for x,y in sorted(d1.items()):
+        print( x , ": ", y * '*')
 
 
 ##    for x,y in sorted(d1.items()):
@@ -267,4 +319,19 @@ d2={"a":5,"b":7,"c":9,"d":12,"e":15,"f":20,"g":15,"h":9,"i":7,"j":2}
 
 #Buscamos el máximo de todos para saber por cual empezar.
 
+
 def histograma_vertical(d2):
+    valor_actual = d2[max(d2, key=d2.get)]
+
+    while valor_actual != 0:
+        for _, y in sorted(d2.items()):
+
+            if y >= valor_actual: 
+                print(' *', end='')
+
+            else:
+                print('  ', end='')
+
+        print('')
+        
+        valor_actual = valor_actual - 1
