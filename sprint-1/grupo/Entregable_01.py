@@ -301,8 +301,44 @@ def imprime_usuarios(file):
 # sencillo juego:
 
 import random
-digits = list(range(10))
-random.shuffle(digits)
-print(digits[:3])
-guess = input("¿Cuál es tú apuesta?: ")
-print(guess)
+
+def juego_decodificador():
+
+    print("¡Bienvenido al decodificador!")
+
+    x = []
+    while len(x) < 3:
+       num = random.choice(range(1, 10))
+       if num in x:
+          num
+       else:
+          x.append(num)
+
+    x = "".join([str(_) for _ in x])
+
+    control = False
+
+    while control==False:
+    
+       guess = input("¿Cuál es tú apuesta?: ")
+    
+       array = list(guess)
+    
+       if x[0:3] == guess[0:3]:
+       
+          control = True
+    
+       elif x[0] in array and x[1] in array and x[2] in array:
+       
+          print('¡Casi!, reordénalos.')
+    
+       elif x[0] == guess[0] or x[1] == guess[1] or x[2] == guess[2]:
+       
+          print('Cerca, ¡sigue así!')
+    
+       else :
+       
+          print('Nada, inténtalo de nuevo.')
+
+    print('¡Enhorabuena, ahora eres un hacker!')
+
