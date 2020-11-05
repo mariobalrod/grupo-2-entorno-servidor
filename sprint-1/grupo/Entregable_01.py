@@ -225,8 +225,6 @@ def sustituye_patrones(frase, fichero):
 #   de formateo:  "{0:>8} {1:<30} {2:<15} {3}"
 # ----------------------------------------------------------------------------------
 
-import re
-
 def is_user_line(list):
     if len(list) == 5 and len(list[0]) == 8:
         return True
