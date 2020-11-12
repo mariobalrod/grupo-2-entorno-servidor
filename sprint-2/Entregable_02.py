@@ -19,12 +19,12 @@
 # ===========================================================
 # Juego del UNO en Python
 
-colors = ["red", "green", "yellow", "blue"]
+# Constantes que necesitamos para el juego
+COLORS = ["red", "green", "yellow", "blue"]
+ESPECIALES = ["reverse", "skip", "draw2"]
+JOKERS = ["wild", "wild4"]
 
-especiales = ["reverse", "skip", "draw2"]
-
-jokers = ["wild", "wild4"]
-
+# Card Class (Esquelo y funcionalidades)
 class Card:
     def __init__(self, value, color, joker):
         self.value = value
@@ -46,11 +46,11 @@ class Card:
     def wild4():
         print("wild4")
 
-
+# Funcion que genera toda la baraja de cartas
 def generateCards():
     all_cards = []
 
-    for color in colors:
+    for color in COLORS:
         for i in range(0, 10):
             if i != 0:
                 all_cards.append(Card(i, color, False))
@@ -58,23 +58,32 @@ def generateCards():
             else:
                 all_cards.append(Card(i, color, False))
 
-    for color in colors:
-        for especial in especiales:
+    for color in COLORS:
+        for especial in ESPECIALES:
                 all_cards.append(Card(especial, color, False))
                 all_cards.append(Card(especial, color, False))
 
-    for joker in jokers:
+    for joker in JOKERS:
         all_cards.append(Card(joker, None, True))
         all_cards.append(Card(joker, None, True))
         all_cards.append(Card(joker, None, True))
         all_cards.append(Card(joker, None, True))
-
-    print(len(all_cards))
-    #return all_cards
+    
+    return all_cards
 
 
 def game():
+    # Declaramos los jugadores con sus inventarios
+    jugador = []
+    ia = []
+
     print('Bienvenidos al Juego del UNO!')
-    generateCards()
+
+    # 1. Generamos la Baraja de Cartas
+    all_cards = generateCards()
+    
+    # 2. Barajamos todas las Cartas
+
+    # 3. Repartimos
 
 game()
