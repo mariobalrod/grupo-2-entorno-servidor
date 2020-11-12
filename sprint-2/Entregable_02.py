@@ -79,11 +79,13 @@ def generateCards():
     return all_cards
 
 
+# funcion que baraja las cartas de la baraja
 def barajarCards(all_cards):
     random.shuffle(all_cards)
     return all_cards
 
 
+# funcion que reparte 7 cartas a cada jugador y las elimina de la baraja
 def repartirCards(all_cards, jugador, ia):
     for i in range(0, 7):
         jugador.append(all_cards[i])
@@ -94,7 +96,18 @@ def repartirCards(all_cards, jugador, ia):
         all_cards.pop(i)
 
 
+# funcion genera carta inicial y la quita de la baraja
+def set_initial_card(all_cards, table):
+    initial_card = random.choice(all_cards)
 
+    while initial_card.joker == True or initial_card.value in ESPECIALES:
+        initial_card = random.choice(all_cards)    
+
+    table.append(initial_card)
+    all_cards.remove(initial_card)
+
+
+# TESTING
 def testing(all_cards):
     for card in all_cards:
         print(card.value, '---', card.color)
@@ -118,10 +131,11 @@ def game():
 
     # 3. Repartimos
     repartirCards(all_cards, jugador, ia)
+
+    # 4. Levantamas Carta inicial
+    set_initial_card(all_cards, table)
+
+    testing(table)
     print(len(all_cards))
-    print('JUGADOR----------------------')
-    testing(jugador)
-    print('IA----------------------')
-    testing(ia)
 
 game()
