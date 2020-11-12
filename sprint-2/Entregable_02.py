@@ -19,16 +19,62 @@
 # ===========================================================
 # Juego del UNO en Python
 
+colors = ["red", "green", "yellow", "blue"]
+
+especiales = ["reverse", "skip", "draw2"]
+
+jokers = ["wild", "wild4"]
+
 class Card:
-    def __init__(self, value, color, function, joker):
+    def __init__(self, value, color, joker):
         self.value = value
         self.color = color
-        self.function = function
         self.joker = joker  
+
+    def reverse():
+        print("reverse")
+
+    def skip():
+        print("skip")
+
+    def draw2():
+        print("draw2")
+
+    def wild():
+        print("wild")
+
+    def wild4():
+        print("wild4")
+
+
+def generateCards():
+    all_cards = []
+
+    for color in colors:
+        for i in range(0, 10):
+            if i != 0:
+                all_cards.append(Card(i, color, False))
+                all_cards.append(Card(i, color, False))
+            else:
+                all_cards.append(Card(i, color, False))
+
+    for color in colors:
+        for especial in especiales:
+                all_cards.append(Card(especial, color, False))
+                all_cards.append(Card(especial, color, False))
+
+    for joker in jokers:
+        all_cards.append(Card(joker, None, True))
+        all_cards.append(Card(joker, None, True))
+        all_cards.append(Card(joker, None, True))
+        all_cards.append(Card(joker, None, True))
+
+    print(len(all_cards))
+    #return all_cards
 
 
 def game():
     print('Bienvenidos al Juego del UNO!')
-
+    generateCards()
 
 game()
