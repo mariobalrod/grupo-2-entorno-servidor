@@ -19,5 +19,16 @@
 # ===========================================================
 # Juego del UNO en Python
 
-def juego ():
+class Card:
+    def __init__(self, value, color, function, joker):
+        self.value = value
+        self.color = color
+        self.function = function
+        self.joker = joker  
+
+
+def game():
     print('Bienvenidos al Juego del UNO!')
+
+
+game()
