@@ -19,10 +19,13 @@
 # ===========================================================
 # Juego del UNO en Python
 
+import random
+
 # Constantes que necesitamos para el juego
 COLORS = ["red", "green", "yellow", "blue"]
 ESPECIALES = ["reverse", "skip", "draw2"]
 JOKERS = ["wild", "wild4"]
+
 
 # Card Class (Esquelo y funcionalidades)
 class Card:
@@ -46,10 +49,12 @@ class Card:
     def wild4():
         print("wild4")
 
+
 # Funcion que genera toda la baraja de cartas
 def generateCards():
     all_cards = []
 
+    # generar y añadir las cartas de los numeros (2 de cada tipo y color menos el 0 que es solo 1)
     for color in COLORS:
         for i in range(0, 10):
             if i != 0:
@@ -58,11 +63,13 @@ def generateCards():
             else:
                 all_cards.append(Card(i, color, False))
 
+    # generar y añadir las cartas de las especiales (2 de cada tipo y color)
     for color in COLORS:
         for especial in ESPECIALES:
                 all_cards.append(Card(especial, color, False))
                 all_cards.append(Card(especial, color, False))
 
+    # generar y añadir las cartas de los comodines
     for joker in JOKERS:
         all_cards.append(Card(joker, None, True))
         all_cards.append(Card(joker, None, True))
@@ -72,10 +79,34 @@ def generateCards():
     return all_cards
 
 
+def barajarCards(all_cards):
+    random.shuffle(all_cards)
+    return all_cards
+
+
+def repartirCards(all_cards, jugador, ia):
+    for i in range(0, 7):
+        jugador.append(all_cards[i])
+        all_cards.pop(i)
+
+    for i in range(0, 7):
+        ia.append(all_cards[i])
+        all_cards.pop(i)
+
+
+
+def testing(all_cards):
+    for card in all_cards:
+        print(card.value, '---', card.color)
+
+
 def game():
     # Declaramos los jugadores con sus inventarios
     jugador = []
     ia = []
+
+    # Declaramos las cartas en la mesa
+    table = []
 
     print('Bienvenidos al Juego del UNO!')
 
@@ -83,7 +114,14 @@ def game():
     all_cards = generateCards()
     
     # 2. Barajamos todas las Cartas
+    all_cards = barajarCards(all_cards)
 
     # 3. Repartimos
+    repartirCards(all_cards, jugador, ia)
+    print(len(all_cards))
+    print('JUGADOR----------------------')
+    testing(jugador)
+    print('IA----------------------')
+    testing(ia)
 
 game()
