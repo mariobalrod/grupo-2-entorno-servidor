@@ -350,6 +350,9 @@ def juego_decodificador():
 
     print("¡Bienvenido al decodificador!")
 
+#==============================================================================================
+
+    # Aquí creamos tres números aleatorios asegurándonos en el while de que no se repita ninguno.
     x = []
     while len(x) < 3:
        num = random.choice(range(1, 10))
@@ -357,15 +360,17 @@ def juego_decodificador():
           num
        else:
           x.append(num)
-
+    # A continuacuión unimos los tres números generados en un solo string para crear el número aleatorio que se usará en el juego.
     x = "".join([str(_) for _ in x])
 
     control = False
 
+#===============================================================================================
+
+    # Comprobamos mediante condicionales las coincidencias entre el número generado y el número que el jugador introduce.
     while control==False:
     
        guess = input("¿Cuál es tú apuesta?: ")
-    
        array = list(guess)
     
        if x[0:3] == guess[0:3]:
@@ -385,4 +390,5 @@ def juego_decodificador():
           print('Nada, inténtalo de nuevo.')
 
     print('¡Enhorabuena, ahora eres un hacker!')
+
 
