@@ -225,41 +225,53 @@ def sustituye_patrones(frase, fichero):
 #   de formateo:  "{0:>8} {1:<30} {2:<15} {3}"
 # ----------------------------------------------------------------------------------
 
+# Función para comprobar si la linea del txt es un usuario
 def is_user_line(list):
+    # Longitud de items es 5 && si el elemento 0 es un dni 
     if len(list) == 5 and len(list[0]) == 8:
         return True
 
     else:
         return False
 
-    
+# ========================================================================================
+
+# Función para establece el DisplayName del usuario
 def set_name(nombre1, nombre2):
+    # Comprobar si tiene segundo nombre
     if len(nombre2) > 0:
         return nombre1 + ' ' + nombre2
     
     else: 
         return nombre1
 
+# ========================================================================================
 
+# Función para montar todo los usernames
 def set_usernames(users):
+    # List en se añadir all usernames
     usernames = []
 
+    # Recorro cada usuario en user
     for user in users:
 
         nombres = user['nombre'].split(' ')
 
         apellidos = user['apellidos'].split(' ')
 
+        # Controlamos si tiene un nombre compuesto o simple
         if len(nombres) == 2:
             username = nombres[0][0]+nombres[1][0]+apellidos[0][0:3]+apellidos[1][0:3]
         
         else: 
             username = nombres[0][0]+apellidos[0][0:3]+apellidos[1][0:3]
 
-
+        # Con esto vemos si el username ya existe si es asi lo tratamos para ponerle un numero superior hasta que sea un username unico
         while username.lower() in usernames:
+            # Usamos regex para obtener el numero de los usernames que se repites
             numbers = re.findall(r'[0-9]+', username)
 
+            # Asignamos el numero que pertenece a ese username
             if len(numbers) > 0:
                 new_number_name = int(numbers[len(numbers)-1]) + 1
 
@@ -268,20 +280,26 @@ def set_usernames(users):
             else:
                 username = username+str(1)
 
-
+        # Añadimos el username creado a la lista de usernames
         usernames.append(username.lower())
 
+        # Asignamos el valor obtenido al objeto user tratado
         user['usuario'] = username.lower()
 
+# ========================================================================================
 
+# Función principal que se encarga de usar las demás funcionalidades para montar la tabla de users
 def imprime_usuarios(file):
 
     users = []
+
+    # Recoge una lista de filas
     f = open(file, 'r')
 
     for line in f:
         items = line.split(':')
 
+        # Si la fila coincide con el esquema de user, crea un objeto user que añade a la lista de users
         if is_user_line(items):
             new_user = {
                 'dni': items[0],
@@ -292,8 +310,10 @@ def imprime_usuarios(file):
 
             users.append(new_user)
 
+    # Paso todos los usuarios a la funcion set_usernames para montar el username
     set_usernames(users)
 
+    # Presento la tabla final con los usuarios siguiendo el esquema de espaciado en el for para cada usuario
     print('DNI      Apellidos                      Nombre          Usuario')
     print('-------- ------------------------------ --------------- --------')
 
