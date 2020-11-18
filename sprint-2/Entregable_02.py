@@ -20,7 +20,7 @@
 # Juego del UNO en Python
 
 import random
-
+import threading
 # Constantes que necesitamos para el juego
 COLORS = ["red", "green", "yellow", "blue"]
 ESPECIALES = ["reverse", "skip", "draw2"]
@@ -32,14 +32,33 @@ JUGADOR = 0
 IA = 1
 
 
-# Obtenemos de forma aleatoria el jugador que empieza
-current_player = random.randint(JUGADOR, IA)
-
-
 # Color actual para cuando se juega un comodin
-current_color = ''
+current_color = []
 
+# Funcion Victoria:
+def is_victory(jugador, ia):
+    if len(ia) == 0:
+        return 'ia'
 
+    if len(jugador) == 0:
+        return 'jugador'
+
+    return ''
+   
+
+#Decir Uno (Temporizacion)
+def say_uno(len_mano):
+    if len_mano == 1:
+        print('Escribe Uno rapidamente: ')
+        uno_escrito = input()
+        cuenta_atras = threading.Timer(10.0,draw2())
+        cuenta_atras.start()
+        if uno_escrito == 'uno':
+            cuenta_atras.cancel()
+        else: 
+            print('Te comes 2 cartas, no estuviste rápido!')
+
+    
 # Card Class (Esqueleto)
 class Card:
     def __init__(self, value, color, joker):
@@ -55,6 +74,8 @@ def change_turn(current_player):
     else:
         current_player = IA
 
+    print('cambia el turno', current_player)
+
 
 # Funcionalidad para la carta Robar 2
 def draw2(all_cards, baraja):
@@ -66,12 +87,12 @@ def draw2(all_cards, baraja):
 # Funcionalidad para la carta Comodin
 def wild(baraja, choice_card):
     for option in baraja:
-        if option.color == current_color and option.value not in ESPECIALES:
+        if option.color == current_color[len(current_color)-1] and option.value not in ESPECIALES:
             choice_card = option
             return choice_card
 
     for option in baraja:
-        if option.color == current_color:
+        if option.color == current_color[len(current_color)-1]:
             choice_card = option
             return choice_card
 
@@ -91,7 +112,6 @@ def wild4(all_cards, baraja):
 
 # Funcionalidad para la carta Número
 def number(card, baraja, choice_card):
-    show_cards(baraja, False)
     for item in baraja:
         if item.color == card.color and not item.value in ESPECIALES:
             choice_card = item
@@ -178,119 +198,227 @@ def show_cards(all_cards, is_table):
 
     if is_table == True:
         card = all_cards[len(all_cards) - 1]
-        print('Carta en juego: ', card.value, ':', card.color)
+        print('===============================')
+        print('CARTA EN JUEGO: ', card.value, ':', card.color)
+        print('===============================')
+        print()
 
     else:
         print('Estas son tus cartas: ')
 
-        for card in all_cards:
-            print(card.value, ':', card.color, ' | ', end="")
+        for i in range(len(all_cards)):
+            print('(', i+1, ') ', all_cards[i].value, ':', all_cards[i].color, ' | ', end="" )
+        
+        print('** Teclee 0 para robar una carta **')
 
         print(' ')
 
-
-# Funcion del turno del jugador
-def turno_jugador(jugador, table, all_cards):
-    print("Es tu turno!")
-
-    # Carta que esta en juego
-    card = table[len(table)-1]
-    # Declarando la carta a escoger
-    choice_card = ''
-    
-    show_cards(jugador)
-    print()
-    print('Elije una opcion (1-', len(jugador), '): ')
-
-    eleccion = input()
-
-    if eleccion - 1 not in range(0, len(jugador)):
-        print('OPCION NO VALIDA')
-    else:
-        choice_card = jugador[eleccion]
-
-    
-    
-
-#=============================================================================
-
-
-# Funcion del turno de la maquina (inteligencia artificial lógica)
-def turno_ia(ia, table, all_cards):
-    # Carta que esta en juego
-    card = table[len(table)-1]
-    # Declarando la carta a escoger
-    choice_card = ''
-
-    # ===============================================
-    # Empezamos a filtrar la elección de cartas mediante condicionales
-
-    # Opcion chupate 2 ==> llamamos a la función draw2
-    if card.value == 'draw2':
-        card.draw2(all_cards, ia)
-
+# Filtro para ver si puede jugar una carta 
+def filter(who, all_cards, current_card, mano, choice_card):
     # Opcion cambio de color ==> estudiamos opciones color y llamamos a wild()
-    if card.value == 'wild':
-
+    if current_card.value == 'wild':
         #------------ RED ------------------
-        if current_color == 'red':
-            choice_card = wild(ia, choice_card)
+        if current_color[len(current_color)-1] == 'red':
+            choice_card = wild(mano, choice_card)
 
-            if choice_card == '':
+            if choice_card == '' and who == 'ia':
                 for i in range(0, 1):
-                    ia.append(all_cards[i])
+                    mano.append(all_cards[i])
                     all_cards.pop(i)
 
-                choice_card = wild(ia, choice_card)
+                choice_card = wild(mano, choice_card)
 
         #------------ GREEN ------------------
-        if current_color == 'green':
-            choice_card = wild( ia, choice_card)
+        if current_color[len(current_color)-1] == 'green':
+            choice_card = wild( mano, choice_card)
 
-            if choice_card == '':
+            if choice_card == '' and who == 'ia':
                 for i in range(0, 1):
-                    ia.append(all_cards[i])
+                    mano.append(all_cards[i])
                     all_cards.pop(i)
 
-                choice_card = wild(ia, choice_card)
+                choice_card = wild(mano, choice_card)
 
         #------------ BLUE ------------------
-        if current_color == 'blue':
-            choice_card = wild(ia, choice_card)
+        if current_color[len(current_color)-1] == 'blue':
+            choice_card = wild(mano, choice_card)
 
-            if choice_card == '':
+            if choice_card == '' and who == 'ia':
                 for i in range(0, 1):
-                    ia.append(all_cards[i])
+                    mano.append(all_cards[i])
                     all_cards.pop(i)
 
-                choice_card = wild(ia, choice_card)
+                choice_card = wild(mano, choice_card)
 
         #------------ YELLOW ------------------
-        if current_color == 'yellow':
-            choice_card = wild(ia, choice_card)
+        if current_color[len(current_color)-1] == 'yellow':
+            choice_card = wild(mano, choice_card)
 
-            if choice_card == '':
+            if choice_card == '' and who == 'ia':
                 for i in range(0, 1):
-                    ia.append(all_cards[i])
+                    mano.append(all_cards[i])
                     all_cards.pop(i)
 
-                choice_card = wild(ia, choice_card)
-
-    # Opcion chupate 4 ==> llama a la funcion wild4
-    if card.value == 'wild4':
-        wild4(all_cards, ia)
+                choice_card = wild(mano, choice_card)
 
     # Opcion numero ==> llama a la funcion number
     else:
-        choice_card = number(card, ia, choice_card)
+        final_choice = number(current_card, mano, choice_card)
 
-        if choice_card == '':
+        # Si de primeras no tiene carta roba una
+        if choice_card == '' and who == 'ia':
             for i in range(0, 1):
-                ia.append(all_cards[i])
+                mano.append(all_cards[i])
                 all_cards.pop(i)
+            
+            final_choice = number(current_card, mano, choice_card)
+    
+    return choice_card
 
-            choice_card = number(card, ia, choice_card)
 
+# Funcion del turno del jugador
+def turno_jugador(jugador, table, all_cards, ia):
+    # Carta que esta en juego
+    card = table[len(table)-1]
+    
+    # Declarando la carta a escoger
+    choice_card = ''
+
+    # Mostrar mano de cartas al jugador
+    show_cards(jugador, False)
+    print()
+    print(f'Elije una opcion (1-{len(jugador)}):')
+        
+    # Introducir la carta escogida
+    eleccion = input()
+    eleccion = int(eleccion) - 1
+        
+    # Controla una eleccion valida
+    while eleccion not in range(-1, len(jugador)):
+        print('validacion numero eleccion')
+        print('OPCION NO VALIDA')
+
+        show_cards(jugador, False)
+        print()
+        print(f'Elije una opcion (1-{len(jugador)}):')
+
+        eleccion = input()
+        eleccion = int(eleccion) - 1
+
+        if eleccion != -1:
+            choice_card = jugador[eleccion]
+
+            # Controlamos que no se hagan trampas y que sea una carta que se pueda jugar contra la que habia en la mesa
+            while (choice_card.value != card.value) and (choice_card.color != card.color) and (choice_card.value not in JOKERS):
+                print("validacion carta")
+                print('OPCION NO VALIDA')
+
+                show_cards(jugador, False)
+
+                print()
+                print(f'Elije una opcion (1-{len(jugador)}):')
+
+                eleccion = input()
+
+                # Controlamos el mismo error de antes para evitar crashear la app
+                while (int(eleccion) - 1) not in range(-1, len(jugador)):
+                    print('validacion numero eleccion 2')
+                    print('OPCION NO VALIDA')
+                    show_cards(jugador, False)
+
+                    print()
+                    print(f'Elije una opcion (1-{len(jugador)}):')
+
+                    eleccion = input()
+                    eleccion = eleccion - 1
+
+    # Una vez filtrada la eleccion valida vemos si debe robar o no
+    # Robar carta si la eleccion es -1
+    if eleccion == -1:
+        for i in range(0, 1):
+            jugador.append(all_cards[i])
+            all_cards.pop(i)
+
+        choice_card = filter('jugador', all_cards, card, jugador, choice_card)
+    else:
+        choice_card = jugador[eleccion]
+    
+    if choice_card == '':
+        print('La carta robada no te sirve :( ')
+    else:
+        # Estudiamos la carta elegida para jugar y dependiendo de la que sea se realiza una accion u otra
+        if choice_card.joker:
+            print()
+            print('Elije un color (red | green | yellow | blue): ')
+            color_elegido = input()
+                
+            # Controlar color valido
+            while color_elegido not in COLORS:
+                print()
+                print('COLOR NO VALIDO')
+                print('Elije un color (red | green | yellow | blue): ')
+                color_elegido = input()
+
+            current_color.append(color_elegido)
+            print('COLOR ELEGIDO: ', current_color[len(current_color)-1])
+
+        if choice_card.value == 'wild4':
+            wild4(all_cards, ia)
+            
+            # Añadir carta a la mesa
+            table.append(choice_card)
+            jugador.pop(eleccion)
+
+            show_cards(table, True)
+            return True
+        
+        if choice_card.value == 'draw2':
+            draw2(all_cards, ia)
+            
+            # Añadir carta a la mesa
+            table.append(choice_card)
+            jugador.pop(eleccion)
+
+            show_cards(table, True)
+            return True
+        
+        if choice_card.value == 'reverse':
+            
+            # Añadir carta a la mesa
+            table.append(choice_card)
+            jugador.pop(eleccion)
+
+            show_cards(table, True)
+            return True
+        
+        if choice_card.value == 'skip':
+            
+            # Añadir carta a la mesa
+            table.append(choice_card)
+            jugador.pop(eleccion)
+
+            show_cards(table, True)
+            return True
+            
+        # Añadir carta a la mesa
+        table.append(choice_card)
+        jugador.pop(eleccion)
+
+        show_cards(table, True)
+        return False
+    
+#=============================================================================
+
+# Funcion del turno de la maquina (inteligencia artificial lógica)
+def turno_ia(ia, table, all_cards, jugador):
+    print('ENTRAAAAAAAAAAAAAAAAA')
+    # Carta que esta en juego
+    card = table[len(table)-1]
+    # Declarando la carta a escoger
+    choice_card = ''
+
+    # Filtramos las cartas mediante la función filter 
+    choice_card = filter('ia', all_cards, card, ia, choice_card)
 
     # Estudiamos la carta elegida 
     # 1. Si no hay carta posible despues de haber robado cambia turno
@@ -298,15 +426,56 @@ def turno_ia(ia, table, all_cards):
     #   2.1. Es joker => elegimos color y despues añadimos a tabla
     #   2.2. No es joker => añadimos a la tabla
     if choice_card == '':
-        change_turn(current_player)
+        print()
     else:
+        # Estudiamos la carta elegida para jugar y dependiendo de la que sea se realiza una accion u otra
         if choice_card.joker == True:
-            print(random.choice(COLORS))
+            current_color.append(random.choice(COLORS))
+            print('CURRENT COLOR: ', current_color[len(current_color)-1])
 
+        if choice_card.value == 'wild4':
+            wild4(all_cards, jugador)
+
+            # Añadimos carta a la tabla
+            table.append(choice_card)
+            ia.pop(eleccion)
+
+            show_cards(table, True)
+            return True            
+
+        if choice_card.value == 'draw2':
+            draw2(all_cards, jugador)
+            
+            # Añadimos carta a la tabla
+            table.append(choice_card)
+            ia.pop(eleccion)
+
+            show_cards(table, True)
+            return True
+
+        if choice_card.value == 'reverse':
+            # Añadimos carta a la tabla
+            table.append(choice_card)
+            ia.pop(eleccion)
+
+            show_cards(table, True)
+            return True
+
+        if choice_card.value == 'skip':
+            # Añadimos carta a la tabla
+            table.append(choice_card)
+            ia.pop(eleccion)
+
+            show_cards(table, True)
+            return True
+
+        # Añadimos carta a la tabla
         table.append(choice_card)
-        ia.remove(choice_card)
+        ia.pop(eleccion)
 
-    show_cards(table, True)
+        show_cards(table, True)
+
+        return False
 
 
 # JUEGO FUNCION PRINCIPAL
@@ -320,7 +489,11 @@ def game():
 
     ganador = ''
 
+    # Obtenemos de forma aleatoria el jugador que empieza
+    current_player = random.randint(JUGADOR, IA)
+
     # =============================================================================
+    print()
     print('Bienvenidos al Juego del UNO!')
 
     # 1. Generamos la Baraja de Cartas
@@ -341,20 +514,61 @@ def game():
     # 6. Controlamos turnos
     while ganador == '':
         if current_player == IA:
-            turno_ia(ia, table, all_cards)
-            ganador = 'ia'
+            print()
+            print('--------------------------- TURNO DE LA MAQUINA ------------------------------------------------------------')
+            control = turno_ia(ia, table, all_cards, jugador)
+            show_cards(table, True)
+
+            if len(ia) == 1:
+                print('LA MÁQUINA DIJO UNO')
+                
+            ganador = is_victory(jugador, ia)
+
+            # Controlamos si la carta que ha jugado le da derecho a jugar de nuevo
+            while control == True: 
+                control = turno_ia(ia, table, all_cards, jugador)
+                show_cards(table, True)
+
+                if len(jugador) == 1:
+                    print('LA MÁQUINA DIJO UNO')
+                    
+                ganador = is_victory(jugador, ia)
+            
+            if current_player == IA:
+                current_player = JUGADOR
+            else:
+                current_player = IA
+            
         else:
-            turno_jugador(jugador, table, all_cards)
-            ganador = 'jugador'
+            print()
+            print('--------------------------- ES TU TURNO --------------------------------------------------------------------')
+            control = turno_jugador(jugador, table, all_cards, ia)
+
+            say_uno(len(jugador))
+            ganador = is_victory(jugador, ia)
+            
+            # Controlamos si la carta que ha jugado le da derecho a jugar de nuevo
+            while control == True:
+                control = turno_jugador(ia, table, all_cards, jugador)
+
+                say_uno(len(jugador))
+                ganador = is_victory(jugador, ia)    
+
+            if current_player == IA:
+                current_player = JUGADOR
+            else:
+                current_player = IA
+            
         
 
     # 7. Presentar quien ha ganado
     if ganador == 'ia':
+        print(current_player)
         print()
-        print('Has perdido pringao!')
+        print('HAS PERDIDO PRINGAO!')
     else:
         print()
-        print('Has ganado campeón!')
+        print('HAS GANADO CAMPEÓN!')
 
 
 game()
