@@ -89,3 +89,20 @@ Crear peticiones.
 
 ![img](https://lh4.googleusercontent.com/3tHoqR_Ch4jGcdc4e5mzfSKKsU7-lksJd9oeMhDppTVLIlGbZKmBMxJJ8vkwWHCszf6zSiqaygHmkhnoNfU3AlJvL51wDjzLIniCZCR6Etf2SgTvryGsFi2tATf1OOdaCb_L-MZ2IXI)
 
+
+
+## ¿Qué es Socket.IO ?
+
+Comenzamos aclarando que Socket.IO es una librería desarrollada en JavaScript creada sobre Websocket y otras tecnologías. 
+
+De echo Socket.IO utiliza WebSocket cuando lo necesita además de respaldarse en otras tecnologías como AJAX Long Polling, AJAX Multipart Stream y muchas mas. Esto permite que web Socket.IO se utilice en otras ocasiones en las que no se admiten WebSockets.
+
+
+
+## ¿Qué es WebSockets?
+
+WebSockets es un protocolo de comunicación web que apareció por primera vez en 2010 en Google Chrome 4. 
+
+Este canal de comunicación web proporciona un canal de comunicación full-duplex (canal de comunicación que permite el envió y recepción simultáneos), a través de una sola conexión TCP.
+
+En otras palabras nos permite una interacción entre servidor y cliente con un esfuerzo mínimo, esto permite la creación de aplicaciones que se aprovechen de las ventajas de la comunicación en tiempo real.
