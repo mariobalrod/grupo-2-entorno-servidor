@@ -77,11 +77,11 @@ Crear peticiones.
 
 **PUT:**  Nos permite modificar los datos solicitados mediante el endpoint de la URI.
 
-**DELETE:** Nos permite borrar algún dato específico, para seleccionarlo se indica en el endpoint de la URI 			    mediante los queryparams.
+**DELETE:** Nos permite borrar algún dato específico, para seleccionarlo se indica en el endpoint de la URI mediante los queryparams.
 
 
 
-### Coleccion de Postman con las peticiones de ejemplo
+### Colección de Postman con las peticiones de ejemplo
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/2e48b33fde1386c6406d)
 
@@ -95,7 +95,7 @@ Crear peticiones.
 
 Comenzamos aclarando que Socket.IO es una librería desarrollada en JavaScript creada sobre Websocket y otras tecnologías. 
 
-De echo Socket.IO utiliza WebSocket cuando lo necesita además de respaldarse en otras tecnologías como AJAX Long Polling, AJAX Multipart Stream y muchas mas. Esto permite que web Socket.IO se utilice en otras ocasiones en las que no se admiten WebSockets.
+De hecho Socket.IO utiliza WebSocket cuando lo necesita además de respaldarse en otras tecnologías como AJAX Long Polling, AJAX Multipart Stream y muchas mas. Esto permite que web Socket.IO se utilice en otras ocasiones en las que no se admiten WebSockets.
 
 
 
@@ -121,7 +121,7 @@ En otras palabras nos permite una interacción entre servidor y cliente con un e
 
 - ### Diferencias clave entre WebSocket y socket.io
 
-  Tanto WebSocket como Socket.io son opciones populares en el mercado; discutamos algunas de las principales diferencias entre WebSocket vs Socket.io:
+  Tanto WebSocket como Socket.io son opciones populares en el mercado, discutamos algunas de las principales diferencias entre WebSocket y Socket.io:
 
   - A diferencia de WebSocket, Socket.IO le permite difundir un mensaje a todos los clientes conectados. Por ejemplo, si estás escribiendo una aplicación de chat y quieres notificar a todos los clientes conectados que un nuevo usuario se ha unido al chat, puedes transmitir fácilmente ese mensaje de una sola vez a todo el mundo. Con WebSocket sin formato, necesitará una lista de todos los clientes conectados y, a continuación, enviar el mensaje directamente uno por uno.
   - Proporciona la conexión sobre TCP, mientras que Socket.io es una biblioteca para abstraer las conexiones de WebSocket.
