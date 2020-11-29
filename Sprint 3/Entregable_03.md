@@ -10,7 +10,7 @@ Segunda entrega <br>
 <br>
 
 - INTEGRANTE 1:  
-    - APELLIDOS, NOMBRE: Ballestero Rodriguez, Mario  
+    - APELLIDOS, NOMBRE: Ballestero Rodríguez, Mario  
     - DNI: 29533046B  
 - INTEGRANTE 2:  
     - APELLIDOS, NOMBRE: Del Junco Pérez, Esperanza  
@@ -113,12 +113,17 @@ Este canal de comunicación web proporciona un canal de comunicación full-duple
 En otras palabras nos permite una interacción entre servidor y cliente con un esfuerzo mínimo, esto permite la creación de aplicaciones que se aprovechen de las ventajas de la comunicación en tiempo real.
 
 
-<br>
+
+## Porque hemos decidido usar Socket.IO
+
+Hemos decidido utilizar Socket.IO porque nos permite transmitir mensajes a todos los clientes que están conectados de forma simultanea (una característica muy a tener en cuenta), además Socket.IO admite los proxies y balanceadores de carga ya listos para su utilización, además como explicamos en su definición Socket.IO permite su utilización en muchas ocasiones en las que WebSocket no podría utilizarse ya que cuenta con varias tecnologías a las que puede recurrir para solucionar este problema que WebSocket no puede solucionar, otra razón mas es que si por cualquier motivo se produce una desconexión, Socket.IO se vuelve a conectar de forma automática cosa que WebSocket no hace.
+
+Todos estos motivos y razones hacen que nos hayamos decantado por Socket.IO, aun así para saber sus diferencias mas en detalle puede continuar con nuestro apartado "Diferencias entre Socket.IO y WebSocket".
 
 <br>
 
 
-#  WebSocket frente a Socket.io
+#  Socket.io frente a WebScoket
 
 
 
@@ -128,9 +133,9 @@ En otras palabras nos permite una interacción entre servidor y cliente con un e
 <br>
 
 
-## Diferencia entre WebSocket y Socket.io
+## Diferencia entre Socket.IO y WebSocket
 
-- ### Diferencias clave entre WebSocket y socket.io
+- ### Diferencias clave entre Socket.IO y WebSocket
 
   Tanto WebSocket como Socket.io son opciones populares en el mercado, discutamos algunas de las principales diferencias entre WebSocket y Socket.io:
 
