@@ -81,7 +81,11 @@ Crear peticiones.
 
 
 
+### Coleccion de Postman con las peticiones de ejemplo
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/2e48b33fde1386c6406d)
+
+<br>
 
 ![img](https://lh4.googleusercontent.com/3tHoqR_Ch4jGcdc4e5mzfSKKsU7-lksJd9oeMhDppTVLIlGbZKmBMxJJ8vkwWHCszf6zSiqaygHmkhnoNfU3AlJvL51wDjzLIniCZCR6Etf2SgTvryGsFi2tATf1OOdaCb_L-MZ2IXI)
 
