@@ -19,6 +19,9 @@ Segunda entrega <br>
     - APELLIDOS, NOMBRE: Ávila Chacón, Sergio  
     - DNI: 29498790W
 
+<br>
+<br>
+
 ## API 
 
 Application Programming Interfaces
@@ -29,13 +32,10 @@ Podemos hablar de una API como una especificación formal que establece cómo un
 
 
 
-
-
 ![img](https://lh4.googleusercontent.com/QK-y7aa-s6E_-hkvhdm6_dQf2FFJGukAvUlh8q8cru-ajEm-BwpKOWFxwxlusYdGD24qBWAPS7Lxgeij_DUJzE8ny8l3zX80wdXaffLERkIr2ZTI8Wwfze02_yvEg6HJMuGUpFdUstc)
 
-
-
-
+<br>
+<br>
 
 ## POSTMAN
 
@@ -58,18 +58,14 @@ Crear peticiones.
 º Crear mockups.
 
 
+<br>
 
 ![img](https://lh6.googleusercontent.com/UIx_dI5AJ62wCzRIXDGWlQe5JyiThcgV90Io_ZwdGljcxwY9J9zHu6RQAAAcQv4I4I1jIwBj5q33deZzw-ASHwRgtfGtKR9g9bAUBWNUgKeSHoetf4RZh6mE9pzVPjcntTaCxss6VOM)
 
 
-
-
-
-
+<br>
 
 ## Métodos:
-
-
 
 **GET:** Es realizar una petición a la API para obtener los datos de la URI proporcionada.
 
@@ -91,16 +87,13 @@ Crear peticiones.
 
 
 <br>
-
 <br>
-
 
 ## ¿Qué es Socket.IO ?
 
 Comenzamos aclarando que Socket.IO es una librería desarrollada en JavaScript creada sobre Websocket y otras tecnologías. 
 
 De hecho Socket.IO utiliza WebSocket cuando lo necesita además de respaldarse en otras tecnologías como AJAX Long Polling, AJAX Multipart Stream y muchas mas. Esto permite que web Socket.IO se utilice en otras ocasiones en las que no se admiten WebSockets.
-
 
 <br>
 
@@ -113,6 +106,9 @@ Este canal de comunicación web proporciona un canal de comunicación full-duple
 En otras palabras nos permite una interacción entre servidor y cliente con un esfuerzo mínimo, esto permite la creación de aplicaciones que se aprovechen de las ventajas de la comunicación en tiempo real.
 
 
+<br>
+
+<br>
 
 ## Porque hemos decidido usar Socket.IO
 
