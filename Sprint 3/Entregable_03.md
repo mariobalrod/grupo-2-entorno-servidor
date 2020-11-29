@@ -90,6 +90,10 @@ Crear peticiones.
 ![img](https://lh4.googleusercontent.com/3tHoqR_Ch4jGcdc4e5mzfSKKsU7-lksJd9oeMhDppTVLIlGbZKmBMxJJ8vkwWHCszf6zSiqaygHmkhnoNfU3AlJvL51wDjzLIniCZCR6Etf2SgTvryGsFi2tATf1OOdaCb_L-MZ2IXI)
 
 
+<br>
+
+<br>
+
 
 ## ¿Qué es Socket.IO ?
 
@@ -98,6 +102,7 @@ Comenzamos aclarando que Socket.IO es una librería desarrollada en JavaScript c
 De hecho Socket.IO utiliza WebSocket cuando lo necesita además de respaldarse en otras tecnologías como AJAX Long Polling, AJAX Multipart Stream y muchas mas. Esto permite que web Socket.IO se utilice en otras ocasiones en las que no se admiten WebSockets.
 
 
+<br>
 
 ## ¿Qué es WebSockets?
 
@@ -108,6 +113,10 @@ Este canal de comunicación web proporciona un canal de comunicación full-duple
 En otras palabras nos permite una interacción entre servidor y cliente con un esfuerzo mínimo, esto permite la creación de aplicaciones que se aprovechen de las ventajas de la comunicación en tiempo real.
 
 
+<br>
+
+<br>
+
 
 #  WebSocket frente a Socket.io
 
@@ -115,6 +124,8 @@ En otras palabras nos permite una interacción entre servidor y cliente con un e
 
 ![WebSocket frente a Socket.io](https://cdn.educba.com/academy/wp-content/uploads/2018/11/WebSocket-vs-Socket.io_-2.png)
 
+
+<br>
 
 
 ## Diferencia entre WebSocket y Socket.io
@@ -129,4 +140,11 @@ En otras palabras nos permite una interacción entre servidor y cliente con un e
   - WebSocket es tecnología, mientras que Socket.io es una biblioteca para WebSockets.
   - Socket.IO API están diseñadas para ser más fáciles de trabajar.
   - Los servidores proxy y los equilibradores de carga dificultan la implementación y la escala de WebSockets. Socket.IO admite estas tecnologías de fábrica o de comercio.
+
+
+<br>
+
+## Modelado de peticiones en Postman para el tablero de Among Us
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/eb5bdb69536f79a6c182)
 
