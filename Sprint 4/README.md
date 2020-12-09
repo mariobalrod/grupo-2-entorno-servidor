@@ -31,13 +31,13 @@ Lo primero será acceder al directorio del sprint 4 y montar un entorno virtual 
 ```bash
 cd Sprint 4/
 
-python3 -m venv env
+python3 -m venv venv
 ```
 
 Posteriormente, activaremos el entorno creado, para ello:
 
 ```bash
-source env/bin/activate
+source venv/bin/activate
 ```
 
 Finalmente, instalaremos todas las dependencias necesarias para el proyecto:
