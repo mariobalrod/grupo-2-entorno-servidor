@@ -21,3 +21,40 @@ Cuarta entrega <br>
 
 <br>
 <br>
+
+### Guía de configuración del Proyecto
+
+<br>
+
+Lo primero será acceder al directorio del sprint 4 y montar un entorno virtual con python para ello, haremos lo siguiente:
+
+```bash
+cd Sprint 4/
+
+python3 -m venv env
+```
+
+Posteriormente, activaremos el entorno creado, para ello:
+
+```bash
+source env/bin/activate
+```
+
+Finalmente, instalaremos todas las dependencias necesarias para el proyecto:
+
+```bash
+pip install -r requirements.txt
+```
+
+<br>
+
+**Nota:** para este proyecto es necesario tener instalado python 3 y pip. Aquí dejamos un documento que especifica la instalación de los mismos en un Sistema Operativo de Windows [Intalación](https://www.notion.so/Installation-da13fdc7c57e4003b82e5be334371e7d)
+
+<br>
+<br>
+
+Para arrancar el servidor python:
+
+```bash
+python3 main.py
+```
