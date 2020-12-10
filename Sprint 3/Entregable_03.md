@@ -131,18 +131,26 @@ Todos estos motivos y razones hacen que nos hayamos decantado por Socket.IO, aun
 
 ## Diferencia entre Socket.IO y WebSocket
 
-- ### Diferencias clave entre Socket.IO y WebSocket
-
-  Tanto WebSocket como Socket.io son opciones populares en el mercado, discutamos algunas de las principales diferencias entre WebSocket y Socket.io:
-
-  - A diferencia de WebSocket, Socket.IO le permite difundir un mensaje a todos los clientes conectados. Por ejemplo, si estás escribiendo una aplicación de chat y quieres notificar a todos los clientes conectados que un nuevo usuario se ha unido al chat, puedes transmitir fácilmente ese mensaje de una sola vez a todo el mundo. Con WebSocket sin formato, necesitará una lista de todos los clientes conectados y, a continuación, enviar el mensaje directamente uno por uno.
-  - Proporciona la conexión sobre TCP, mientras que Socket.io es una biblioteca para abstraer las conexiones de WebSocket.
-  - WebSocket no tiene opciones de respaldo, mientras que Socket.io admite respaldo.
-  - WebSocket es tecnología, mientras que Socket.io es una biblioteca para WebSockets.
-  - Socket.IO API están diseñadas para ser más fáciles de trabajar.
-  - Los servidores proxy y los equilibradores de carga dificultan la implementación y la escala de WebSockets. Socket.IO admite estas tecnologías de fábrica o de comercio.
+Tanto WebSocket como Socketio son opciones populares en el mercado, discutamos algunas de las principales diferencias entre WebSocket y Socketio:
 
 
+| **WebSocket**                                                | **Socketio**                                                |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Es el protocolo que se establece sobre la conexión TCP.      | Es la biblioteca para trabajar con WebSocket.                |
+| Proporciona comunicación full duplex en conexiones TCP.      | Proporciona la comunicación basada en eventos entre el navegador y el servidor. |
+| El proxy y el equilibrador de carga no son compatibles con WebSocket. | Se puede establecer una conexión en presencia de proxies y balanceadores de carga. |
+| No es compatible con la transmisión.                         | Es compatible con la transmisión.                            |
+| No tiene una opción de respaldo.                             | Admite opciones de respaldo.                                 |
+
+<br>
+
+En conclusión hemos optado por Socket.io principalmente por estas diferencias:
+
+- Websocket proporciona la conexión sobre TCP, mientras que Socket.io es una biblioteca para abstraer las conexiones de WebSocket.
+- WebSocket no tiene opciones de respaldo, mientras que Socket.io admite respaldo.
+- WebSocket es tecnología, mientras que Socket.io es una biblioteca para WebSockets.
+
+<br>
 <br>
 
 ## Modelado de peticiones en Postman para el tablero de Among Us
