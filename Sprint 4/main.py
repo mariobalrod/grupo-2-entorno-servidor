@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_socketio import SocketIO
+from flask_socketio import SocketIO, emit
 from flask_cors import CORS
 
 # Iniciar app flask
@@ -16,9 +16,18 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 # Añadiendo socketio a la app y cors a los socket
 socketio = SocketIO(app, cors_allowed_origins='*')
 
+#Ruta Inicial del servidor Flask
 @app.route('/')
 def index():
-    return 'Hola soy el servidor'
+    return 'Server running'
+
+#Eventos Sockets
+
+#Evento creacion del jugador
+@socketio.on('join')
+def handleJoin(player):
+    emit("player_joined", player, broadcast = True)
+
 
 # Método principal main (Inicializando servidor)
 if __name__ == '__main__':
