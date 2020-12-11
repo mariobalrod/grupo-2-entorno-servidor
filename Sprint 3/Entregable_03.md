@@ -149,3 +149,9 @@ Todos estos motivos y razones hacen que nos hayamos decantado por Socket.IO, aun
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/eb5bdb69536f79a6c182)
 
+<br>
+<br>
+
+## Modelo UML del Among-US
+
+![img](https://github.com/mariobalrod/grupo-2-entorno-servidor/blob/sprint-3/Sprint%203/img/Uml.JPG)
