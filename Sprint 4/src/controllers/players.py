@@ -1,5 +1,5 @@
 from models.player import Player
-from utils.events import *
+from utils.event import *
 from utils.random import *
 
 players = []

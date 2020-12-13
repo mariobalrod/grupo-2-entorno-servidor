@@ -1,6 +1,6 @@
 
 class Player:
-    def __init__(self, name, color, sockedId):
+    def __init__(self, name, color, socketId):
         self.name = name
         self.color = color
         self.alive = True
