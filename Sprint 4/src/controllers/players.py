@@ -30,9 +30,11 @@ def vote(id):
 
     emitAll('players', players)
 
-#funcion para terminar la partida tras los votos.
+#funcion para terminar la partida tras los votos, determina si el eliminado es impostor o no, y según el resultado se sigue con la partida o se acaba.
 def end_game():
+    temp = True
     max_voting = players[0]
+
     for player in players:
         if player['voting'] > max_voting['voting']:
             max_voting = player
@@ -41,8 +43,12 @@ def end_game():
         if player['id'] == max_voting['id']:
             player['alive'] = False
 
-    emitAll('players', players)
-    
+            if player['role'] == 'impostor':
+                temp = False
+                emitAll('impostor', 'Tripulantes habeis matado al Impostor')
+
+    if temp == True:
+        emitAll('players', players)
 #funcion para empezar nueva partida.
 def clear():
     players = []
