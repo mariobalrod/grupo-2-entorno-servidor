@@ -1,6 +1,8 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_socketio import SocketIO, emit
 from flask_cors import CORS
+
+from controllers.players import *
 
 # Iniciar app flask
 app = Flask(__name__)
@@ -19,7 +21,7 @@ socketio = SocketIO(app, cors_allowed_origins='*')
 #Ruta Inicial del servidor Flask
 @app.route('/')
 def index():
-    return 'Server running'
+    return render_template('index.html')
 
 @socketio.on_error()
 def error_handler(e):
