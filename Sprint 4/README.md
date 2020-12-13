@@ -22,23 +22,55 @@ Cuarta entrega <br>
 <br>
 <br>
 
+### Requerimientos del sistema
+
+
+
+**Nota:** Este software ha sido creado inicialmente en Windows 10 por lo cual tiene las librerías correspondientes a Windows 10, se recomienda su ejecución en Windows 10.
+
+- Tener Python 3 actualizado a su ultima versión: [python 3](https://www.python.org/downloads/)
+
+- Se necesita tener Python pip instalado y en su ultima versión:
+
+  ```bash
+  python -m pip install
+  ```
+
+  ```bash
+  python -m pip install --upgrade
+  ```
+
+  
+
 ### Guía de configuración del Proyecto
 
 <br>
 
-Lo primero será acceder al directorio del sprint 4 y montar un entorno virtual con python para ello, haremos lo siguiente:
+Lo primero será acceder al directorio del sprint 4 y montar un entorno virtual con Python para ello, haremos lo siguiente:
 
 ```bash
 cd Sprint 4/
 
-python3 -m venv venv
+py -m venv venv
 ```
+
+
 
 Posteriormente, activaremos el entorno creado, para ello:
 
-```bash
-source venv/bin/activate
-```
+* En caso de Ubuntu:
+
+  ```bash
+  source venv/bin/activate
+  ```
+
+* En caso de Windows:
+
+  ```bash
+  source venv/Scripts/activate
+  ```
+
+
 
 Finalmente, instalaremos todas las dependencias necesarias para el proyecto:
 
@@ -48,13 +80,10 @@ pip install -r requirements.txt
 
 <br>
 
-**Nota:** para este proyecto es necesario tener instalado python 3 y pip. Aquí dejamos un documento que especifica la instalación de los mismos en un Sistema Operativo de Windows [Intalación](https://www.notion.so/Installation-da13fdc7c57e4003b82e5be334371e7d)
 
-<br>
-<br>
 
-Para arrancar el servidor python:
+Para arrancar el servidor Python:
 
 ```bash
-python3 main.py
+py src/main.py
 ```
