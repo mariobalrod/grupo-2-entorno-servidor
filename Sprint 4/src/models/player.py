@@ -9,12 +9,3 @@ class Player:
         self.id = socketId
         self.voting = 0
 
-    def vote(olayer):
-        player.voting.append(self)
-
-    def die():
-        self.alive = False
-
-    def toJSON(self):
-        return json.dumps(self, default=lambda o: o.__dict__, sort_keys = True, indent=4)
-        
