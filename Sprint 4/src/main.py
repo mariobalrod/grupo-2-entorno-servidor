@@ -21,12 +21,48 @@ socketio = SocketIO(app, cors_allowed_origins='*')
 def index():
     return 'Server running'
 
-#Eventos Sockets
+@socketio.on_error()
+def error_handler(e):
+    print(e)
 
-#Evento creacion del jugador
-@socketio.on('join')
-def handleJoin(player):
-    emit("player_joined", player, broadcast = True)
+#               Eventos Sockets
+#==================================================
+
+#Lo primero es restringit que los eventos solo aparezcan si estas conectado
+#para ello los creamos dentro de la funcion on_connect()
+@socketio.on('connect')
+def on_connect():
+    print('Someone has been connected')
+
+    #E. Unirse jugador
+    @socketio.on('join')
+    def on_join(name, id):
+        join(name, id)
+
+    #E. Para que comience el juego cuando este todos los jugadores listos
+    @socketio.on('start')
+    def on_start():
+        start()
+
+    #E. Votar
+    @socketio.on('vote')
+    def on_vote(id):
+        vote(id)
+
+    #E. Fin del juego 
+    @socketio.on('end')
+    def on_end():
+        end_game()
+
+    #E. Reseteo de los colores
+    @socketio.on('clear')
+    def on_clear():
+        clear()
+
+    #E. desconexion del servidor
+    @socketio.on('disconnect')
+    def on_disconnect():
+        print('User has been disconnected')
 
 
 # Método principal main (Inicializando servidor)
