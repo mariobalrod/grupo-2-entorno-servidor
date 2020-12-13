@@ -67,7 +67,7 @@ Posteriormente, activaremos el entorno creado, para ello:
 * En caso de Windows:
 
   ```bash
-  source venv/src/activate
+  source venv/Scripts/activate
   ```
 
 
@@ -85,5 +85,5 @@ pip install -r requirements.txt
 Para arrancar el servidor Python:
 
 ```bash
-py main.py
+py src/main.py
 ```
