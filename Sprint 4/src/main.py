@@ -21,7 +21,7 @@ socketio = SocketIO(app, cors_allowed_origins='*')
 #Ruta Inicial del servidor Flask
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return 'Server running'
 
 @socketio.on_error()
 def error_handler(e):

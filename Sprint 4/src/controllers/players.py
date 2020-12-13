@@ -49,6 +49,7 @@ def end_game():
 
     if temp == True:
         emitAll('players', players)
+        
 #funcion para empezar nueva partida.
 def clear():
     players = []
