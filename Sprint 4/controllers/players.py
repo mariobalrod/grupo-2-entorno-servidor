@@ -25,7 +25,7 @@ def start():
         impostor = get_random_impostor(players)
         impostor['role'] = 'impostor'
     
-    data = { "players": players, "vote": True, "playing": True }
+    data = { "players": players, "playing": True }
     emitAll('start', data)
 
 #funcion por la que se puede votar a los jugadores.
@@ -35,10 +35,7 @@ def vote(id):
             player['voting'] = player['voting'] + 1
             votes.append(player)
 
-    if len(votes) == len(player):
-        for player in votes:
-            player['voting'] = 0
-
+    if len(votes) == len(players):
         emitAll('finish', players)
 
     else:
@@ -46,23 +43,30 @@ def vote(id):
 
 #funcion para terminar la partida tras los votos, determina si el eliminado es impostor o no, y según el resultado se sigue con la partida o se acaba.
 def end_game():
-    temp = True
     max_voting = players[0]
+    temp = 0
 
     for player in players:
+        print(max_voting['voting'])
         if player['voting'] > max_voting['voting']:
             max_voting = player
+            temp = player['id']
 
     for player in players:
         if player['id'] == max_voting['id']:
             player['alive'] = False
 
             if player['role'] == 'impostor':
-                temp = False
+                for player in players:
+                    player['voting'] = 0
+
                 emitAll('impostor', 'Tripulantes habeis matado al Impostor')
 
-    if temp == True:
-        emitAll('players', players)
+            else:
+                for player in players:
+                    player['voting'] = 0
+
+                emitAll('kill', players)
         
 #funcion para empezar nueva partida.
 def clear():
