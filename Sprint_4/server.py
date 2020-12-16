@@ -16,7 +16,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Añadiendo socketio a la app y cors a los socket
-socketio = SocketIO(app, cors_allowed_origins='*', async_mode='gevent')
+socketio = SocketIO(app, cors_allowed_origins='*')
 
 #Ruta Inicial del servidor Flask
 @app.route('/')
