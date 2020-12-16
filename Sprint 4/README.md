@@ -85,5 +85,5 @@ pip install -r requirements.txt
 Para arrancar el servidor Python:
 
 ```bash
-py src/main.py
+py server.py
 ```
