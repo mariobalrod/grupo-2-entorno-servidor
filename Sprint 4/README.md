@@ -87,3 +87,45 @@ Para arrancar el servidor Python:
 ```bash
 py server.py
 ```
+
+
+
+
+
+## Despliegue
+
+*  [Cliente](https://among-us-voting-server.herokuapp.com/)
+
+*  [Servidor](https://among-us-voting-server.herokuapp.com/)
+
+  
+
+  
+
+Al abrir el cliente se muestra:
+
+![inicio](./docs/inicial.JPG)
+
+Una vez introducido el nombre entramos en la sala de juego en la que estarán todos lo jugadores, que hayan entrado al mismo tiempo, ya que al estar trabajando con socket si pasa mucho tiempo entre el login de un jugador y otro el socket se actualiza y solo quedaría el ultimo jugador.
+
+
+
+![lobby](./docs/start.JPG)
+
+
+
+Una vez todos los jugadores esten listos comenzamos con "Start game".
+
+
+
+![play](./docs/play.JPG)
+
+Una vez haya muerto un jugador, como es obvio no se le permite realizar mas votaciones.
+
+![dead](./docs/muerto.png)
+
+
+
+Una vez se ha pillado al impostor se avisa y se termina el juego.
+
+![](./docs/fin.png)
