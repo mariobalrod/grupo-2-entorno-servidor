@@ -35,31 +35,32 @@ def error_handler(e):
 @socketio.on('connect')
 def on_connect():
     print('Someone has been connected')
+    controllers = Controllers()
 
     #E. Unirse jugador
     @socketio.on('join')
     def on_join(name, id):
-        join(name, id)
+        controllers.join(name, id)
 
     #E. Para que comience el juego cuando este todos los jugadores listos
     @socketio.on('start')
     def on_start():
-        start()
+       controllers. start()
 
     #E. Votar
     @socketio.on('vote')
     def on_vote(id):
-        vote(id)
+        controllers.vote(id)
 
     #E. Fin del juego 
     @socketio.on('end')
     def on_end():
-        end_game()
+        controllers.end_game()
 
     #E. Reseteo de los colores
     @socketio.on('clear')
     def on_clear():
-        clear()
+        controllers.clear()
 
     #E. desconexion del servidor
     @socketio.on('disconnect')
