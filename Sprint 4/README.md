@@ -1,6 +1,6 @@
 # Entregable 4
 
-![](C:\Users\Usuario\Desktop\Git\grupo-2-entorno-servidor\Sprint 4\docs\portada.jpg)
+![portada](./docs/portada.jpg)
 
 
 
