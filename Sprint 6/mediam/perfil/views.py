@@ -4,5 +4,5 @@ from django.shortcuts import render
 def perfil(request):
     return render(request, 'perfil/perfil.html')
 
-def setting(request):
-    return render(request, 'perfil/setting.html')
+def settings(request):
+    return render(request, 'perfil/settings.html')

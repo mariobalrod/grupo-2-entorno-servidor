@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('auth/', include('auth.urls')),
-    path('perfil/', include('perfil.urls')),
+    path('', include('home.urls')),
+    path('', include('auth.urls')),
+    path('', include('perfil.urls')),
 ]
