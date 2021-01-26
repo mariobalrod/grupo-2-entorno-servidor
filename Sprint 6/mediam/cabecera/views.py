@@ -1,11 +1,14 @@
 from django.shortcuts import render
 
 # Create your views here.
-def login(request):
+def home(request):
     return render(request, 'cabecera/home.html')
 
 def post(request):
     return render(request, 'cabecera/post.html')
 
-def (request):
+def chat(request):
     return render(request, 'cabecera/chat.html')
+
+def setting(request):
+    return render(request, 'cabecera/setting.html')
