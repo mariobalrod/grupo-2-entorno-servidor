@@ -6,4 +6,5 @@ urlpatterns = [
     path('', include('auth.urls')),
     path('', include('perfil.urls')),
     path('', include('chat.urls')),
+    path('', include('upload_image.urls')),
 ]
