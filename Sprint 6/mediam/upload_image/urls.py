@@ -3,6 +3,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('perfil/', views.perfil),
-    path('settings/', views.settings),
+    path('upload_image/', views.upload_image),
 ]
