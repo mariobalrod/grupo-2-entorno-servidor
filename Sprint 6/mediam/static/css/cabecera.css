@@ -1,0 +1,26 @@
+.cabecera{
+    display: flex;
+    justify-content: space-between;
+}
+
+.iconosCabecera{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+
+    margin-right: 206px;    
+    margin-top: 15px;
+}
+
+.iconosCabecera :first-child{
+    margin-left: 35px;
+}
+
+.cabecera a{
+    text-decoration: none;
+}
+
+#logoCabecera{
+    margin-top: 15px;
+    margin-left: 206px;
+}
