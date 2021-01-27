@@ -6,13 +6,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static "css/index.css" %}"/>
+    <link rel="stylesheet" href="{% static "css/cabecera.css" %}"/>
     {% block head %}
     <title>Base</title>
-    {% endblock %}
+    {% endblock %}  
 </head>
 
 <body>
-    <h1>CABECERA</h1>
+    
+    <div class="cabecera">
+        <a href="/"><img id="logoCabecera" src="../static/images/Logo.svg" alt=""></a>
+        <ul class="iconosCabecera">
+            <a href="/"><li><img src="../static/images/icons/home.svg" alt=""></li></a>
+            <a href="/upload_image"><li><img src="../static/images/icons/camera.svg" alt=""></li></a>
+            <a href="/chat"><li><img src="../static/images/icons/chat.svg" alt=""></li></a>
+            <a href="#"><li><img src="../static/images/icons/bell.svg" alt=""></li></a>
+            <a href="/settings"><li><img src="../static/images/icons/settings.svg" alt=""></li></a>
+            <a id="avatarCabecera" href="/perfil"><li><img src="../static/images/icons/avatar.svg" alt=""></li></a>    
+        </ul>
+    </div>
     
     {% block body %}
     <h1>Base</h1>
