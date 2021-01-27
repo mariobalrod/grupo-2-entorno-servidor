@@ -2,13 +2,14 @@
 {% load static %}
 
 {% block head %}
+<link rel="stylesheet" href="{% static "css/perfil.css" %}"/>
 <title>Perfil</title>
-<link rel="stylesheet" href="{% static "css/perfil.css" %}"/ >
 {% endblock %}
 
 {% block body %}
+<!-- Contenedor de los datos de perfil -->
 <div>
-    <div id="datosPefil">
+    <div id="datosPerfil">
         <img src="../../static/images/avatarGris.svg" alt="AvatarGris">
         <div id="textoPerfil">
             <h2>Nombre</h2>
@@ -16,19 +17,25 @@
             <p id="descripcionPerfil"> No puedes comprar felicidad pero puedes comparar un vuelo, que es 
                 <br>más o menos lo mismo… 
             </p>
+        </div>        
+    </div>
+    <hr>
+    <!-- Contenedor de las imagenes de perfil -->
+    <div id="imagenesPerfil" >
+        <div class="fila1Perfil">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
         </div>
-        <hr>
-        <div id="imagenesPerfil" >
-            <div class="fila1Perfil">
-                <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
-                <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
-                <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
-            </div>
-            <div class="fila2Perfil">
-                <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
-                <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
-                <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
-            </div>
+        <div class="fila2Perfil">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+        </div>
+        <div class="fila3Perfil">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
         </div>
     </div>    
 </div>
