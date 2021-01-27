@@ -1,14 +1,12 @@
 
-.container{
+.container_register{
     margin-top: 30px;
 
 }
-.register{
+.register_img{
     position: absolute;
     display: flex;
     flex-wrap: wrap;
-    width: 700px;
-    height: 700px;
     left: 0px;
     top: 0px;
 }

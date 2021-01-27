@@ -14,16 +14,18 @@
 
 <body>
     
-    <div class="cabecera">
-        <a href="/"><img id="logoCabecera" src="../static/images/Logo.svg" alt=""></a>
-        <ul class="iconosCabecera">
-            <a href="/"><li><img src="../static/images/icons/home.svg" alt=""></li></a>
-            <a href="/upload_image"><li><img src="../static/images/icons/camera.svg" alt=""></li></a>
-            <a href="/chat"><li><img src="../static/images/icons/chat.svg" alt=""></li></a>
-            <a href="#"><li><img src="../static/images/icons/bell.svg" alt=""></li></a>
-            <a href="/settings"><li><img src="../static/images/icons/settings.svg" alt=""></li></a>
-            <a id="avatarCabecera" href="/perfil"><li><img src="../static/images/icons/avatar.svg" alt=""></li></a>    
-        </ul>
+    <div class="cabecera_container">
+        <div class="cabecera_content">
+            <a href="/"><img id="logoCabecera" src="../static/images/Logo.svg" alt=""></a>
+            <ul class="cabecera_icons">
+                <a href="/"><li><img src="../static/images/icons/home.svg" alt=""></li></a>
+                <a href="/upload_image"><li><img src="../static/images/icons/camera.svg" alt=""></li></a>
+                <a href="/chat"><li><img src="../static/images/icons/chat.svg" alt=""></li></a>
+                <a href="#"><li><img src="../static/images/icons/bell.svg" alt=""></li></a>
+                <a href="/settings"><li><img src="../static/images/icons/settings.svg" alt=""></li></a>
+                <a id="avatarCabecera" href="/perfil"><li><img src="../static/images/icons/avatar.svg" alt=""></li></a>    
+            </ul>
+        </div>
     </div>
     
     {% block body %}

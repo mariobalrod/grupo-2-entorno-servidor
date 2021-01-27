@@ -1,8 +1,8 @@
-.container{
+.container_login{
     margin-top: 150px;
 
 }
-.register{
+.login_img{
     position: absolute;
     display: flex;
     flex-wrap: wrap;

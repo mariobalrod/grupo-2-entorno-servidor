@@ -1,17 +1,16 @@
-.home {
-    background-color: #FAFAFA;
-    margin: 84px 0;
-    padding: 0;
+.home_container {
+    width: 100%;
 }
 
 .home_content {
-    margin: 0 auto;
+    margin: 84px auto;
     margin-bottom: 0;
     max-width: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #FAFAFA;
 }
 
 .post_card {

@@ -13,69 +13,78 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container container_register">
         <div class="row justify-content-start">
-            <img class="register" src="../../static/images/register.png">
+            <img class="register_img" src="../../static/images/register.png" style="height: 100vh;">
         </div>
-        <div class="row justify-content-end" >
-                            <div class="col-md-5">
-                                <div class="card" style="border: 0ch;">
-                                    <class class="card-body">
-                                        <div class="crate" style="font-size: x-large; font-weight: bold;">Create an account</div>
-                                        <br>
-                                        <br>
-                                        <form class="form-horizontal" method="post" action="#">
-                                            <div class="form-group">
-                                                <label for="email" class="cols-sm-2 control-label">Your Email</label>
-                                                <div class="cols-sm-10">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="username" class="cols-sm-2 control-label">Username</label>
-                                                <div class="cols-sm-10">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" name="username" id="username" placeholder="Enter your Username" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="password" class="cols-sm-2 control-label">Password</label>
-                                                <div class="cols-sm-10">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                                        <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-                                                <div class="cols-sm-10">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                                        <input type="password" class="form-control" name="confirm" id="confirm" placeholder="Confirm your Password" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <br>
-                                            <div class="form-group ">
-                                                <button type="button" class="btn btn-primary  btn-block" style="background-color: #04C35C; border: 0ch;"><a  href="../perfil/" style="color:white;">Register now</a></button>
-                                            </div>
-                                            <br>
-                                            <br>
-                                            <div class="login-register" style="text-align: center;">
-                                                <a href="/login">Have an account?</a>
-                                            </div>
-                                        </form>
+        <div class="row justify-content-end" style="margin-right: 80px;">
+            <div class="col-md-5">
+                <div class="card mx-auto" style="border: 0ch; max-width: 400px;">
+                    <class class="card-body">
+                        <div class="crate" style="font-size: x-large; font-weight: bold;">Create an account</div>
+                        <br>
+                        <br>
+                        <form class="form-horizontal" method="post" action="#">
+                            <div class="form-group">
+                                <label for="email" class="cols-sm-2 control-label">Your Email</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-envelope fa"
+                                                aria-hidden="true"></i></span>
+                                        <input type="text" class="form-control" name="email" id="email"
+                                            placeholder="Enter your Email" />
                                     </div>
-        
                                 </div>
                             </div>
-                        </div>
+                            <div class="form-group">
+                                <label for="username" class="cols-sm-2 control-label">Username</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                                        <input type="text" class="form-control" name="username" id="username"
+                                            placeholder="Enter your Username" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="cols-sm-2 control-label">Password</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock fa-lg"
+                                                aria-hidden="true"></i></span>
+                                        <input type="password" class="form-control" name="password" id="password"
+                                            placeholder="Enter your Password" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock fa-lg"
+                                                aria-hidden="true"></i></span>
+                                        <input type="password" class="form-control" name="confirm" id="confirm"
+                                            placeholder="Confirm your Password" />
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group ">
+                                <button type="button" class="btn btn-primary  btn-block"
+                                    style="background-color: #04C35C; border: 0ch;"><a href="../perfil/"
+                                        style="color:white;">Register now</a></button>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="login-register" style="text-align: center;">
+                                <a href="/login">Have an account?</a>
+                            </div>
+                        </form>
+                </div>
+        
+            </div>
+        </div>
+        </div>
         </div>
 </body>
 </html>
