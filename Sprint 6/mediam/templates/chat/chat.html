@@ -6,7 +6,22 @@
 
 {% block body %}
 <div>
-    <h1>Chat</h1>
+    <div class="left_bar">
+        <div class="user_box">
+            <span class="username_box"></span>
+            <span class="date_box"></span>
+        </div>
+    </div>
+
+    <div class="chat_container">
+        <div class="message_local">
+            <span class="text_local"></span>
+        </div>
+        <div class="message_visit">
+            <span class="text_visit"></span>
+        </div>
+        <input type="text" class="send_message_chat">
+    </div>
 </div>
 
 {% endblock %}
