@@ -1,6 +1,5 @@
-
 .container{
-    margin-top: 30px;
+    margin-top: 150px;
 
 }
 .register{
@@ -12,4 +11,6 @@
     left: 0px;
     top: 0px;
 }
-
+.radio{
+    margin-right: 100px;
+}
