@@ -1,12 +1,36 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block head %}
 <title>Perfil</title>
+<link rel="stylesheet" href="{% static "css/perfil.css" %}"/ >
 {% endblock %}
 
 {% block body %}
 <div>
-    <h1>Perfil</h1>
+    <div id="datosPefil">
+        <img src="../../static/images/avatarGris.svg" alt="AvatarGris">
+        <div id="textoPerfil">
+            <h2>Nombre</h2>
+            <p id="nickName"> @NickName </p>
+            <p id="descripcionPerfil"> No puedes comprar felicidad pero puedes comparar un vuelo, que es 
+                <br>más o menos lo mismo… 
+            </p>
+        </div>
+        <hr>
+        <div id="imagenesPerfil" >
+            <div class="fila1Perfil">
+                <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+                <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+                <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+            </div>
+            <div class="fila2Perfil">
+                <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+                <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+                <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+            </div>
+        </div>
+    </div>    
 </div>
 
 {% endblock %}
