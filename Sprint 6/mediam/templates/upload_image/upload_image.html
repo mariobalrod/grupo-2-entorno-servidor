@@ -1,17 +1,22 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block head %}
 <title>Upload</title>
+<link rel="stylesheet" href="{% static "css/upload_image.css" %}"/>
 {% endblock %}
 
 {% block body %}
 <div>
-    <h1>New Post</h1>
-    <hr width="1084" >
+    <div class="tituloPost">
+        <h1 > New Post </h1>
+        <h2> Share </h2> 
+    </div>
+    <hr width="1084px" >
     <div id="contenidoPost">
         <img src="../../static/images/avatarGris.svg" alt="">
         <div id="comentarioPost">
-            <textarea name="comentario"  cols="30" rows="10"></textarea>
+            <textarea name="comentario" style="width: 427px; height: 165px;" cols="30" rows="10"></textarea>
             <button> Tag people </button>
             <button> Add location </button>
         </div>

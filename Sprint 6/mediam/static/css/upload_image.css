@@ -1,0 +1,58 @@
+.tituloPost{
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 260px ;
+}
+
+.tituloPost h1{
+    margin-left: 400px;
+}
+
+.tituloPost h2{
+    
+    margin-right: 400px;
+    color: #04C35C;
+}
+
+hr{
+    margin-top: 0px;
+}
+
+#contenidoPost{
+    display: flex;
+    justify-content: center;
+
+    margin-top: 70px;
+}
+
+#contenidoPost :first-child{
+    margin-right: 148px;
+}
+
+#contenidoPost img{
+    margin-top: -130px;
+}
+
+#comentarioPost{
+    display: flex;
+    flex-direction: column;
+    margin-left: -80px;
+}
+
+
+
+#comentarioPost button{
+    margin-top: 18px;
+
+    display: flex;
+    align-items: flex-start;
+
+    width: 189px;
+    height: 32px;
+
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.29);
+    box-sizing: border-box;
+    
+}
