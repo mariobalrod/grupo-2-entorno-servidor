@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<title>Upload</title>
+<link rel="stylesheet" href="{% static "css/upload_image.css" %}"/>
+{% endblock %}
+
+{% block body %}
+<div>
+    <div class="tituloPost">
+        <h1>New Post</h1>
+        <h2>Share</h2> 
+    </div>
+    <hr id="hrPost" width="1084px" style="margin: 0 auto;" >
+    <div id="contenidoPost">
+        <img src="../../static/images/avatarGris.svg" alt="">
+        <div id="comentarioPost">
+            <textarea name="comentario" style="width: 427px; height: 165px;" cols="30" rows="10"></textarea>
+            <button> Tag people </button>
+            <button> Add location </button>
+        </div>
+        <img src="../../static/images/placeholder.svg" alt="">
+    </div>
+</div>
+
+{% endblock %}

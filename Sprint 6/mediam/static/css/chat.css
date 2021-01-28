@@ -1,0 +1,135 @@
+.root_chat {
+    display: flex;
+}
+
+.root_username {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.title_chat {
+    margin: 15.5px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.left_bar {
+    width: 272px;
+    background: #F2F3F5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.user_box {
+    width: 100%;
+}
+
+.user_box:hover {
+    cursor: pointer;
+    background: #ECECEC;
+    border-radius: 5px;
+}
+
+.username_box {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.column_name_date {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.date_box {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 13px;
+    color: #A3A3A3;
+}
+
+.post_avatar {
+    margin-left: 24px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(208, 208, 208, 0.83);
+}
+
+.username_top {
+    margin-left: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+}
+
+.chat_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content_chat {
+    width: 100%;
+    min-height: 800px;
+}
+
+.message_local {
+    display: flex;
+    padding: 10px 13px;
+    width: 455.56px;
+    height: 38px;
+    background: rgba(22, 188, 98, 0.83);
+    border-radius: 20px;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.text_local {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+.message_visit {
+    display: flex;
+    padding: 10px 13px;
+    width: 482.76px;
+    height: 42px;
+    background: #E3E3E5;
+    border-radius: 20px;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.text_visit {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    color: #434343;
+}
+
+.send_message_chat {
+    margin: 0 auto;
+    background: #EBEDEF;
+    width: 1129px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #8B8B8B;
+    padding: 5px 20px;
+}
+
