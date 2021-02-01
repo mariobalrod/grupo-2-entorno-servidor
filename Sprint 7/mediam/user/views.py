@@ -9,3 +9,9 @@ def register(request):
 
 def reset_password(request):
     return render(request, 'auth/reset_password.html')
+
+def perfil(request):
+    return render(request, 'perfil/perfil.html')
+
+def settings(request):
+    return render(request, 'perfil/settings.html')
