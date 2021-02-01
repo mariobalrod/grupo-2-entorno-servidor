@@ -6,5 +6,5 @@ class User(models.Model):
     first_name = models.CharField(max_length=128, blank= False, null= False)
     nick_name = models.CharField(max_length=128, blank= False, null= False)
     password = models.CharField(max_length=20, blank= False, null= False)
-    phone_number = models.PositiveIntegerField(default=0, blank= False, null= False)
+    phone_number = models.CharField(max_length=20, blank= False, null= False)
     description = models.TextField(max_length=350, blank= False, null= False )
