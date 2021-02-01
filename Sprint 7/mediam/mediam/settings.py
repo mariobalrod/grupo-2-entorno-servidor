@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'chat',
     'home',
     'upload_image',
+    'user',
 ]
 
 MIDDLEWARE = [

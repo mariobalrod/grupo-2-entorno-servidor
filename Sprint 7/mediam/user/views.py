@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from user.models import User
 
 # Create your views here.
 def login(request):
@@ -15,3 +16,4 @@ def perfil(request):
 
 def settings(request):
     return render(request, 'perfil/settings.html')
+
