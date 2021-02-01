@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/login.css" %}"/>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container container_login">
+        <div class="row justify-content-start">
+            <img class="login_img" src="../../static/images/login.png" style="height: 100vh;">
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-md-5">
+                <div class="card" style="border: 0ch;">
+                    <class class="card-body">
+                        <div class="crate">Welcome back</div>
+                        <div class="crate" style="font-size: x-large; font-weight: bold;">Login to your account</div>
+                        <br>
+                        <form class="form-horizontal" method="post" action="#">
+                            <div class="form-group">
+                                <label for="email" class="cols-sm-2 control-label">Email</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-envelope fa"
+                                                aria-hidden="true"></i></span>
+                                        <input type="text" class="form-control" name="email" id="email"
+                                            placeholder="Enter your Email" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="cols-sm-2 control-label">Password</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock fa-lg"
+                                                aria-hidden="true"></i></span>
+                                        <input type="password" class="form-control" name="password" id="password"
+                                            placeholder="Enter your Password" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="login-register" style="text-align: center;">
+                                <input type="radio">&nbsp;&nbsp;Remember me</input>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="/reset_password">Forgot the password?</a>
+                            </div>
+                            <br>
+                            <div class="form-group ">
+                                <button type="button" class="btn btn-primary  btn-block"
+                                    style="background-color: #04C35C; border: 0ch;"><a  href="../perfil/" style="color:white;">Login now</a></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

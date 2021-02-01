@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "css/chat.css" %}"/>
+<title>Chat</title>
+{% endblock %}
+
+{% block body %}
+<div class="root_chat">
+    <div class="left_bar">
+        <span class="title_chat">Chat</span>
+        <hr>
+        {% for _ in range %}
+            <div class="user_box">
+                <div class="root_username">
+                    <div class="post_avatar"></div>
+                    <div class="column_name_date">
+                        <span class="username_box">username</span>
+                        <span class="date_box">11 nov 2020</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="chat_container">
+        <div class="root_username">
+            <div class="post_avatar"></div>
+            <span class="username_top">username</span>
+        </div>
+        <hr>
+        <!-- <div class="message_local">
+            <span class="text_local">Happy birthday!</span>
+        </div>
+        <div class="message_visit">
+            <span class="text_visit">Thx!</span>
+        </div> -->
+        <div class="content_chat">
+
+        </div>
+        <input type="text" class="send_message_chat">
+    </div>
+</div>
+
+{% endblock %}

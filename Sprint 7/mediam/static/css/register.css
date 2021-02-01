@@ -1,0 +1,13 @@
+
+.container_register{
+    margin-top: 30px;
+
+}
+.register_img{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    left: 0px;
+    top: 0px;
+}
+
