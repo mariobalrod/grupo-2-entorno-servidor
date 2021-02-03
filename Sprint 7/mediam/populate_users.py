@@ -13,6 +13,7 @@ def populate(N=5):
 
     for entry in range(N):
         fake_email = fakegen.email()
+        fake_image = fakegen.image_url()
         fake_first_name = fakegen.name()
         fake_nick_name = fakegen.name()
         fake_password = fakegen.name()
@@ -22,6 +23,7 @@ def populate(N=5):
         #Nueva Entrada de datos
         user = User.objects.get_or_create(
             email = fake_email, 
+            image = fake_image,
             first_name = fake_first_name, 
             nick_name = fake_nick_name, 
             password = fake_password, 
