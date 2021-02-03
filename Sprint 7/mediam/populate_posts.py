@@ -24,18 +24,15 @@ def populate(N=5):
         fake_user.save()
 
         # Creating fake comments
-        fake_comments: []
-        for entry in range(5):
-            fake_body = fakegen.text()
-            fake_comment = Comment.objects.create(body=fake_body, user=fake_user)
-            comments.append(fake_comment)
-            fake_comment.save()
+        fake_body = fakegen.text()
+        fake_comment = Comment.objects.create(body=fake_body, user=fake_user)
+        fake_comment.save()
 
         # Creating fake post
         fake_image = fakegen.image_url()
         fake_description = fakegen.text()
 
-        fake_post = Post.objects.create(image=fake_image, description=fake_description, comments=fake_comments, user=fake_user)
+        fake_post = Post.objects.create(image=fake_image, description=fake_description, comments=fake_comment, user=fake_user)
         fake_post.save()
 
 
