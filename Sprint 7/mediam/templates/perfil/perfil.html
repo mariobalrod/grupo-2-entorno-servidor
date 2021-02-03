@@ -8,18 +8,21 @@
 
 {% block body %}
 <!-- Contenedor de los datos de perfil -->
-{% if users %}
+
 <div>
     <div id="datosPerfil">
-        <img src="../../static/images/avatarGris.svg" alt="AvatarGris">
+        {% for person in users %}
+        <img src= "{{person.image}}" alt="AvatarGris">
         <div id="textoPerfil">
-            <h2>Nombre</h2>
-            <p id="nickName"> @NickName </p>
-            <p id="descripcionPerfil"> No puedes comprar felicidad pero puedes comparar un vuelo, que es 
-                <br>más o menos lo mismo… 
+            <h2>Nombre: {{ person.first_name }}</h2>
+            <p id="nickName"> Nickname: {{ person.nick_name }} </p>
+            <p id="descripcionPerfil"> Descripcion:
+                {{ person.description }}
             </p>
-        </div>        
+        </div>
+        {% endfor %}        
     </div>
+    
     <hr>
     <!-- Contenedor de las imagenes de perfil -->
     <div id="imagenesPerfil" >
