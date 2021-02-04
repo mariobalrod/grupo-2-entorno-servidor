@@ -9,7 +9,7 @@
     margin-top: 50px;
 }
 #nickName{
-    color: grey;
+    color: dimgrey;
 }
 
 #datosPerfil img{
@@ -17,15 +17,25 @@
 }
 
 #imagenesPerfil{
-    margin-left: 370px;
-    margin-top: 100px;   
-    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.fila1Perfil{
+    margin-top: 50px;
+    display: flex;
+    
 }
 
 .fila2Perfil{
     margin-top: 50px;
+    display: flex;
+
 }
 
 .fila3Perfil{
     margin-top: 50px;
+    display: flex;
 }
