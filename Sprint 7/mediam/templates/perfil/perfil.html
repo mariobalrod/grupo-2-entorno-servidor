@@ -11,8 +11,8 @@
 
 <div>
     <div id="datosPerfil">
-        {% for person in users %}
-        {% if person.email == 'greenclaudia@hotmail.com' %}
+        
+        {% if person %}
         <img src= "{{person.image}}" alt="AvatarGris">
         <div id="textoPerfil">
             <h2>Nombre: {{ person.first_name }}</h2>
@@ -22,7 +22,7 @@
             </p>
         </div>
         {% endif %}
-        {% endfor %}        
+      
     </div>
     
     <hr>

@@ -13,8 +13,8 @@ def reset_password(request):
 
 def perfil(request):
     user_list = User.objects.order_by('first_name')
-    user_dict = {'users': user_list}
-    return render(request, 'perfil/perfil.html', context=user_dict )
+    context = {'person': user_list[0]}
+    return render(request, 'perfil/perfil.html', context )
 
 def settings(request):
     return render(request, 'perfil/settings.html')

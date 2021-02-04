@@ -32,6 +32,6 @@ def populate(N=5):
             )[0]
 
 if __name__ == '__main__':
-            print("RELLENANDO BASE DE DATOS")
-            populate(10)
-            print("COMPLETADO!")
+    print("RELLENANDO BASE DE DATOS")
+    populate(10)
+    print("COMPLETADO!")
