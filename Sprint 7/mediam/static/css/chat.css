@@ -81,44 +81,35 @@
 }
 
 .content_chat {
+    display: flex;
     width: 100%;
     min-height: 800px;
+    flex-direction: column;
+    margin-top: auto;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 25px;
 }
 
-.message_local {
+.message{
     display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     padding: 10px 13px;
-    width: 455.56px;
-    height: 38px;
+    margin-top: 10px;
+    width: 650px;
+    height: 58px;
+    bottom: 0px;
     background: rgba(22, 188, 98, 0.83);
     border-radius: 20px;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
-.text_local {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 18px;
-    color: #FFFFFF;
-}
-
-.message_visit {
-    display: flex;
-    padding: 10px 13px;
-    width: 482.76px;
-    height: 42px;
-    background: #E3E3E5;
-    border-radius: 20px;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-}
-
-.text_visit {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 18px;
-    color: #434343;
+.text{
+    display:contents;
+    margin-bottom: 650px;
+    width: 650px;
+    height: 38px;
+    bottom: 0px;
 }
 
 .send_message_chat {
