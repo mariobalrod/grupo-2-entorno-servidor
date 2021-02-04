@@ -17,4 +17,5 @@ class Post(models.Model):
     description = models.CharField(max_length=350, blank=False, null=False)
     created_at = models.DateTimeField(default=datetime.datetime.now, editable=False)
     comments = models.ForeignKey(Comment, on_delete=models.CASCADE)
+    likes = models.IntegerField(default=0, blank=False, null=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
