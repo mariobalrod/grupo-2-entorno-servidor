@@ -1,5 +1,11 @@
 from django.shortcuts import render
+from chat.models import Chat
 
 # Create your views here.
 def chat(request):
-    return render(request, 'chat/chat.html', {'range': [1, 2, 3, 4, 5, 6, 7, 8]})
+    chat_list = Chat.objects.order_by('user')
+    context = {'chats' : chat_list, 'current_chat' : chat_list[0]}
+    return render(request, 'chat/chat.html', context)
+
+
+    
