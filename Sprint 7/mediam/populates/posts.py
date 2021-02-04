@@ -32,8 +32,9 @@ def populate(N=5):
         # Creating fake post
         fake_image = fakegen.image_url()
         fake_description = fakegen.text()
+        fake_likes = fakegen.pyint()
 
-        fake_post = Post.objects.create(image=fake_image, description=fake_description, comments=fake_comment, user=fake_user)
+        fake_post = Post.objects.create(image=fake_image, description=fake_description, likes = fake_likes, comments=fake_comment, user=fake_user)
         fake_post.save()
 
 

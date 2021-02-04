@@ -3,4 +3,6 @@ from home.models import Post
 
 # Create your views here.
 def index(request):
-    return render(request, 'home/home.html', { "posts": Post.objects.order_by('created_at') })
+    posts = Post.objects.order_by('created_at')[:5]
+    context = { "posts": posts }
+    return render(request, 'home/home.html', context)

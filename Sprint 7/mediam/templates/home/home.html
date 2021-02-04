@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static " css/home.css" %}" />
+<link rel="stylesheet" href="{% static "css/home.css" %}"/>
 <title>Home</title>
 {% endblock %}
 
@@ -20,7 +20,7 @@
                         {{ post.user.nick_name }}
                     </span>
                 </div>
-                <img src="{% static " images/icons/more.svg" %}" alt="logo" style="margin-right: 24px;">
+                <img src="{% static "images/icons/more.svg" %}" alt="logo" style="margin-right: 24px;">
             </div>
 
             <!--POST IMAGES-->
@@ -30,9 +30,9 @@
             <div class="card_section_bet">
                 <span class="post_likes">{{post.likes }} likes</span>
                 <div class="card_section_ard">
-                    <img src="{% static " images/icons/like.svg" %}" alt="logo" style="margin-right: 28px;">
-                    <img src="{% static " images/icons/comment.svg" %}" alt="logo" style="margin-right: 28px;">
-                    <img src="{% static " images/icons/share.svg" %}" alt="logo" style="margin-right: 26px;">
+                    <img src="{% static "images/icons/like.svg" %}" alt="logo" style="margin-right: 28px;">
+                    <img src="{% static "images/icons/comment.svg" %}" alt="logo" style="margin-right: 28px;">
+                    <img src="{% static "images/icons/share.svg" %}" alt="logo" style="margin-right: 26px;">
                 </div>
             </div>
 
@@ -44,10 +44,9 @@
                         {{ post.comments.body }}
                     </span>
                 </div>
-
-                <!--POST INPUT COMMENT-->
-                <input type="text" class="post_input" placeholder="Add a comment...">
             </div>
+            <!--POST INPUT COMMENT-->
+            <input type="text" class="post_input" placeholder="Add a comment...">
         </div>
         {% endfor %}
     </div>

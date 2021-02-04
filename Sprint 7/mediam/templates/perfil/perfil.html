@@ -13,7 +13,7 @@
     <div id="datosPerfil">
         
         {% if person %}
-        <img src= "{{person.image}}" alt="AvatarGris">
+        <img src= "{{person.image}}" alt="AvatarGris" width="174px" height="174px" style="border-radius: 100px;">
         <div id="textoPerfil">
             <h2>Nombre: {{ person.first_name }}</h2>
             <p id="nickName"> Nickname: {{ person.nick_name }} </p>
