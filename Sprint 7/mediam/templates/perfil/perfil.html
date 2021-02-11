@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "css/perfil.css" %}"/>
+<title>Perfil</title>
+{% endblock %}
+
+{% block body %}
+<!-- Contenedor de los datos de perfil -->
+
+<div>
+    <div id="datosPerfil">
+        
+        {% if person %}
+        <img src= "{{person.image}}" alt="AvatarGris" width="174px" height="174px" style="border-radius: 100px;">
+        <div id="textoPerfil">
+            <h2>Nombre: {{ person.first_name }}</h2>
+            <p id="nickName"> Nickname: {{ person.nick_name }} </p>
+            <p id="descripcionPerfil"> Descripcion:
+                {{ person.description }}
+            </p>
+        </div>
+        {% endif %}
+      
+    </div>
+    
+    <hr>
+    <!-- Contenedor de las imagenes de perfil -->
+    <div id="imagenesPerfil" >
+        <div class="fila1Perfil">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+        </div>
+        <div class="fila2Perfil">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+        </div>
+        <div class="fila3Perfil">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+            <img src="../../static/images/placeholder.svg" alt="" style="height: 203px; width: 360px;">
+        </div>
+    </div>    
+</div>
+
+{% endblock %}

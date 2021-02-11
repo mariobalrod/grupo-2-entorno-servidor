@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "css/home.css" %}"/>
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+<div class="home_container">
+    <!--CONTENEDOR POSTS-->
+    <div class="home_content">
+        {% for post in posts %}
+        <div class="post_card">
+            <!--HEADER POST CARD-->
+            <div class="card_section_bet">
+                <div class="card_section_ard">
+                    <div class="post_avatar"></div>
+                    <span class="post_username">
+                        {{ post.user.nick_name }}
+                    </span>
+                </div>
+                <img src="{% static "images/icons/more.svg" %}" alt="logo" style="margin-right: 24px;">
+            </div>
+
+            <!--POST IMAGES-->
+            <img class="post_image" src="{{ post.image }}" alt="logo" width="600px" height="337px">
+
+            <!--POST STATS-->
+            <div class="card_section_bet">
+                <span class="post_likes">{{post.likes }} likes</span>
+                <div class="card_section_ard">
+                    <img src="{% static "images/icons/like.svg" %}" alt="logo" style="margin-right: 28px;">
+                    <img src="{% static "images/icons/comment.svg" %}" alt="logo" style="margin-right: 28px;">
+                    <img src="{% static "images/icons/share.svg" %}" alt="logo" style="margin-right: 26px;">
+                </div>
+            </div>
+
+            <!--COMPONENTS SECTIONS-->
+            <div class="post_comments">
+                <div class="post_comment">
+                    <span class="comment_username">{{ post.comments.user.nick_name }}</span>
+                    <span class="comment_body">
+                        {{ post.comments.body }}
+                    </span>
+                </div>
+            </div>
+            <!--POST INPUT COMMENT-->
+            <input type="text" class="post_input" placeholder="Add a comment...">
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

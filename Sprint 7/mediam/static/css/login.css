@@ -1,0 +1,16 @@
+.container_login{
+    margin-top: 150px;
+
+}
+.login_img{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    width: 700px;
+    height: 700px;
+    left: 0px;
+    top: 0px;
+}
+.radio{
+    margin-right: 100px;
+}

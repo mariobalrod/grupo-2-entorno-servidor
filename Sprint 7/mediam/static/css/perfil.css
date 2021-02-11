@@ -1,0 +1,46 @@
+#datosPerfil{
+    display: flex;
+    justify-content: center;
+    max-width: 1280px;
+    margin: 130px auto;
+    margin-bottom: 129px;
+}
+
+#textoPerfil {
+    max-width: 750px;
+}
+
+#descripcionPerfil{
+    margin-top: 50px;
+}
+#nickName{
+    color: dimgrey;
+}
+
+#datosPerfil img{
+    margin-right: 51px;
+}
+
+#imagenesPerfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.fila1Perfil{
+    margin-top: 50px;
+    display: flex;
+    
+}
+
+.fila2Perfil{
+    margin-top: 50px;
+    display: flex;
+
+}
+
+.fila3Perfil{
+    margin-top: 50px;
+    display: flex;
+}

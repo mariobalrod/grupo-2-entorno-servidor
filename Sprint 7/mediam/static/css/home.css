@@ -1,0 +1,118 @@
+.home_container {
+    width: 100%;
+}
+
+.home_content {
+    margin: 84px auto;
+    margin-bottom: 0;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FAFAFA;
+}
+
+.post_card {
+    width: 600px;
+    height: 596px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFFFFF;
+    border: 0.5px solid #D3D3D3;
+}
+
+.card_section_bet {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+}
+
+.card_section_ard {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.post_avatar {
+    margin-left: 24px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(208, 208, 208, 0.83);
+}
+
+.post_username {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+    margin-left: 11px;
+}
+
+.post_likes {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 19px;
+    color: #000000;
+    margin-left: 25px;
+}
+
+.post_comments {
+    max-width: 549px;
+    max-height: 84px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.post_comment {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;   
+}
+
+.comment_username {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.comment_body {
+    margin-left: 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #A4A4A4;
+}
+
+.more_comments {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 15px;
+    color: #C9C9C9;
+}
+
+.post_input {
+    padding: 16px 24px;
+    min-width: 550px;
+    border: none;
+    outline: none;
+    border-top: 0.5px solid #D3D3D3;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    color: #B3B3B3;
+    margin-top: auto;
+}
