@@ -1,4 +1,4 @@
-from populates import users
+from populates import users, posts
 from django.contrib.auth.models import User
 import os
 
@@ -11,3 +11,4 @@ if __name__ == '__main__':
 
     # Create faker data
     users.populate(10)
+    posts.populate(10)

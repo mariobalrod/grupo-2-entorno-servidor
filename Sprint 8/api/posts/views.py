@@ -17,6 +17,7 @@ def likes_list(req):
 
     elif req.method == 'POST':
         data = JSONParser().parse(req)
+        print('DATA', data)
         serializer = LikeSerializer(data=data)
 
         if serializer.is_valid():
@@ -29,9 +30,7 @@ def likes_list(req):
 @csrf_exempt
 def like_datails(req, value):
     try:
-				# En este caso usaremos la id para distinguir al user que queremos obtener
-				# editar o eliminar
-        like = Like.objects.get(post=value)
+        like = Like.objects.get(id=value)
     except Like.DoesNotExist:
         return HttpResponse(status=404)
 
@@ -62,7 +61,7 @@ def like_datails(req, value):
 def comments_list(req):
     if req.method == 'GET':
         comments = Comment.objects.all()
-        serializer = PostSerializer(comments, many=True)
+        serializer = CommentSerializer(comments, many=True)
 
         return JsonResponse(serializer.data, safe=False, status=200)
 
@@ -80,9 +79,7 @@ def comments_list(req):
 @csrf_exempt
 def comment_datails(req, value):
     try:
-				# En este caso usaremos la id para distinguir al user que queremos obtener
-				# editar o eliminar
-        comment = Comment.objects.get(post=value)
+        comment = Comment.objects.get(id=value)
     except Comment.DoesNotExist:
         return HttpResponse(status=404)
 
@@ -130,9 +127,7 @@ def posts_list(req):
 @csrf_exempt
 def post_datails(req, value):
     try:
-				# En este caso usaremos la id para distinguir al user que queremos obtener
-				# editar o eliminar
-        post = Post.objects.get(user=value)
+        post = Post.objects.get(id=value)
     except Post.DoesNotExist:
         return HttpResponse(status=404)
 
