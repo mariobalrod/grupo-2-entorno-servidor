@@ -17,6 +17,7 @@ def likes_list(req):
 
     elif req.method == 'POST':
         data = JSONParser().parse(req)
+        print('DATA', data)
         serializer = LikeSerializer(data=data)
 
         if serializer.is_valid():

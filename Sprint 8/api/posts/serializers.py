@@ -82,6 +82,7 @@ class LikeSerializer(serializers.Serializer):
         ]
 
     def create(self, validated_data):
+        print('SERIALIZER', validated_data)
         return Like.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
