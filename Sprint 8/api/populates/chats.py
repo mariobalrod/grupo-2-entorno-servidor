@@ -6,7 +6,7 @@ import django
 django.setup()
 
 from users.models import User
-from posts.models import Post, Comment, Like
+from chat.models import Chat, Message
 from faker import Faker
 
 fakegen = Faker()
@@ -35,32 +35,16 @@ def populate(N=5):
         )
         user.save()
 
-        fake_image = fakegen.image_url()
-        fake_description_post = fakegen.text()
-
-        post = Post.objects.create(
-            image=fake_image, 
-            description=fake_description_post,
-            user=user
+        chat = Chat.objects.create(
+            users=user
         )
-        post.save()
-
-
-        fake_comments = []
+        chat.save()
 
         for entry2 in range(N):
-            fake_body = fakegen.text()
-            fake_comment = Comment.objects.create(body=fake_body, user = user, post=post)
-            fake_comment.save()
-            fake_comments.append(fake_comment)
-
-        fake_likes = []
-
-        for entry3 in range(N):
-            fake_like = Like.objects.create(user = user, post=post)
-            fake_like.save()
-            fake_likes.append(fake_like)
-
-
-if __name__ == '__main__':
-    populate(10)
+            fake_text = fakegen.text()
+            message = Message.objects.create(
+                text=fake_text,
+                user=user,
+                chat=chat
+            )
+            message.save()

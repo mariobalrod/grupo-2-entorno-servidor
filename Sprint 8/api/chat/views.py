@@ -27,7 +27,7 @@ def chat_list(request):
 def chat_details(request, value):
 
     try:
-        chat = Chat.objects.get(nick=value)
+        chat = Chat.objects.get(id=value)
     except Chat.DoesNotExist:
         return HttpResponse(status=404)
 
@@ -51,16 +51,16 @@ def chat_details(request, value):
             return HttpResponse(status = 409)
 #========================================================================
 @csrf_exempt
-def message_list(request):
+def message_list(req):
 
-    if request.method == 'GET':
+    if req.method == 'GET':
         messages = Message.objects.all()
         serializer = MessageSerializer(messages, many = True)
 
         return JsonResponse(serializer.data, safe=False, status=200)
     
-    elif request.method == 'POST':
-        data = JSONParser().parse(request)
+    elif req.method == 'POST':
+        data = JSONParser().parse(req)
         serializer = MessageSerializer(data=data) 
 
         if serializer.is_valid():
@@ -73,7 +73,7 @@ def message_list(request):
 def message_details(request, value):
 
     try:
-        message = Message.objects.get(nick=value)
+        message = Message.objects.get(id=value)
     except Message.DoesNotExist:
         return HttpResponse(status=404)
 
