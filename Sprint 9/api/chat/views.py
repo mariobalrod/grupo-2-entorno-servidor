@@ -1,15 +1,15 @@
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
-
+from oauth2_provider.decorators import protected_resource
 from chat.models import Chat, Message
 from chat.serializers import ChatSerializer, MessageSerializer
 
 # Create your views here.
 
 @csrf_exempt
+@protected_resource()
 def chat_list(request):
-
     if request.method == 'GET':
         chats = Chat.objects.all()
         serializer = ChatSerializer(chats, many = True)
@@ -23,9 +23,10 @@ def chat_list(request):
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=204)
 
-@csrf_exempt
-def chat_details(request, value):
 
+@csrf_exempt
+@protected_resource()
+def chat_details(request, value):
     try:
         chat = Chat.objects.get(id=value)
     except Chat.DoesNotExist:
@@ -49,8 +50,10 @@ def chat_details(request, value):
             return HttpResponse(status = 200)
         except:
             return HttpResponse(status = 409)
-#========================================================================
+
+
 @csrf_exempt
+@protected_resource()
 def message_list(req):
 
     if req.method == 'GET':
@@ -69,7 +72,9 @@ def message_list(req):
                
         return JsonResponse(serializer.errors, status=204)
 
+
 @csrf_exempt
+@protected_resource()
 def message_details(request, value):
 
     try:

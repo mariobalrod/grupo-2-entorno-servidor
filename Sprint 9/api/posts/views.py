@@ -4,10 +4,12 @@ from django.http import HttpResponse, JsonResponse
 from rest_framework.parsers import JSONParser
 from .models import Post, Comment, Like
 from .serializers import PostSerializer, CommentSerializer, LikeSerializer
+from oauth2_provider.decorators import protected_resource
 
 
 # Create your views here.
 @csrf_exempt
+@protected_resource()
 def likes_list(req):
     if req.method == 'GET':
         likes = Like.objects.all()
@@ -27,6 +29,7 @@ def likes_list(req):
 
 
 @csrf_exempt
+@protected_resource()
 def like_datails(req, value):
     try:
         like = Like.objects.get(id=value)
@@ -57,6 +60,7 @@ def like_datails(req, value):
 
 
 @csrf_exempt
+@protected_resource()
 def comments_list(req):
     if req.method == 'GET':
         comments = Comment.objects.all()
@@ -76,6 +80,7 @@ def comments_list(req):
 
 
 @csrf_exempt
+@protected_resource()
 def comment_datails(req, value):
     try:
         comment = Comment.objects.get(id=value)
@@ -105,6 +110,7 @@ def comment_datails(req, value):
 
 
 @csrf_exempt
+@protected_resource()
 def posts_list(req):
     if req.method == 'GET':
         posts = Post.objects.all()
@@ -124,6 +130,7 @@ def posts_list(req):
 
 
 @csrf_exempt
+@protected_resource()
 def post_datails(req, value):
     try:
         post = Post.objects.get(id=value)

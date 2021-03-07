@@ -14,9 +14,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('', include('users.urls')),
     path('', include('posts.urls')),
     path('', include('chat.urls')),
