@@ -4,10 +4,12 @@ from django.http import HttpResponse, JsonResponse
 from rest_framework.parsers import JSONParser
 from .models import User
 from .serializers import UserSerializer
+from oauth2_provider.decorators import protected_resource
 
 
 # Create your views here.
 @csrf_exempt
+@protected_resource()
 def users_list(req):
     if req.method == 'GET':
         users = User.objects.all()
@@ -27,6 +29,7 @@ def users_list(req):
 
 
 @csrf_exempt
+@protected_resource()
 def user_datails(req, value):
     try:
         user = User.objects.get(id=value)
