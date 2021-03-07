@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'posts',
     'chat',
     'rest_framework',
+    'oauth2_provider',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +120,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+    )
+}
