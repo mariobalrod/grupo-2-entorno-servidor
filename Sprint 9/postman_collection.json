@@ -1,0 +1,869 @@
+{
+	"info": {
+		"_postman_id": "2d255900-185f-4f3c-84b8-ea86475f6edf",
+		"name": "Grupo2 - Sprint 9",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get all users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.globals.set(\"id_user\", pm.response.json()[0].id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Obtener todos los usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\n\t\"first_name\": \"Mario\",\n\t\"last_name\": \"Ballestero\",\n\t\"email\": \"mario@gmail.com\",\n\t\"username\": \"mario12\",\n\t\"password\": \"mario12\"\n}\t",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user/{{id_user}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"{{id_user}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\n\t\"first_name\": \"Mario\",\n\t\"last_name\": \"Ballestero\",\n\t\"email\": \"mario@gmail.com\",\n\t\"username\": \"mario12editado\",\n\t\"password\": \"mario12editado\"\n}\t"
+						},
+						"url": {
+							"raw": "{{base_url}}/user/{{id_user}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"{{id_user}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user/{{id_user}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"{{id_user}}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Get all posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.globals.set(\"id_post\", pm.response.json()[0].id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/posts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"eowegnwongeoinwgoegewigwg\",\n    \"user\": {\n        \"id\": \"e29d4c85-b452-4cfd-b7e9-e442ad7518b2\",\n        \"email\": \"erobertson@hotmail.com\",\n        \"first_name\": \"Pamela Davis\",\n        \"last_name\": \"Julie Nicholson\",\n        \"username\": \"Charles Becker\",\n        \"password\": \"Michael Fox\",\n        \"phone_number\": \"015.506.0741x5229\",\n        \"description\": \"Line happy page radio conference. Traditional with put outside. Top continue person size.\\nChoice character able central plant see. Training within rate just.\",\n        \"created_at\": \"2021-02-24T22:25:38.366681Z\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/posts/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"posts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/post/{{id_post}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"post",
+								"{{id_post}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"eowegnwongeoinwgoegewigwg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/post/{{id_post}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"post",
+								"{{id_post}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/post/{{id_post}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"post",
+								"{{id_post}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chats",
+			"item": [
+				{
+					"name": "Get all chats",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.globals.set(\"id_chat\", pm.response.json()[0].id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/chats",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"chats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a chat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"users\": {\n        \"id\": \"e29d4c85-b452-4cfd-b7e9-e442ad7518b2\",\n        \"email\": \"erobertson@hotmail.com\",\n        \"first_name\": \"Pamela Davis\",\n        \"last_name\": \"Julie Nicholson\",\n        \"username\": \"Charles Becker\",\n        \"password\": \"Michael Fox\",\n        \"phone_number\": \"015.506.0741x5229\",\n        \"description\": \"Line happy page radio conference. Traditional with put outside. Top continue person size.\\nChoice character able central plant see. Training within rate just.\",\n        \"created_at\": \"2021-02-24T22:25:38.366681Z\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/chats/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"chats",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one chat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/chat/{{id_chat}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"chat",
+								"{{id_chat}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a chat",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"users\": {\n        \"id\": \"CAMBIOOO//UPDATEE\",\n        \"email\": \"erobertson@hotmail.com\",\n        \"first_name\": \"Pamela Davis\",\n        \"last_name\": \"Julie Nicholson\",\n        \"username\": \"Charles Becker\",\n        \"password\": \"Michael Fox\",\n        \"phone_number\": \"015.506.0741x5229\",\n        \"description\": \"Line happy page radio conference. Traditional with put outside. Top continue person size.\\nChoice character able central plant see. Training within rate just.\",\n        \"created_at\": \"2021-02-24T22:25:38.366681Z\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/chat/{{id_chat}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"chat",
+								"{{id_chat}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a chat",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/chat/{{id_chat}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"chat",
+								"{{id_chat}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Likes",
+			"item": [
+				{
+					"name": "Get all likes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.globals.set(\"id_like\", pm.response.json()[0].id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/likes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"likes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a like",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"id\": \"e29d4c85-b452-4cfd-b7e9-e442ad7518b2\",\n        \"email\": \"erobertson@hotmail.com\",\n        \"first_name\": \"Pamela Davis\",\n        \"last_name\": \"Julie Nicholson\",\n        \"username\": \"Charles Becker\",\n        \"password\": \"Michael Fox\",\n        \"phone_number\": \"015.506.0741x5229\",\n        \"description\": \"Line happy page radio conference. Traditional with put outside. Top continue person size.\\nChoice character able central plant see. Training within rate just.\",\n        \"created_at\": \"2021-02-24T22:25:38.366681Z\"\n    },\n    \"post\": {\n        \"id\": \"5737dda1-08bd-458f-bf04-4bcc5cd4d858\",\n        \"image\": \"https://dummyimage.com/582x500\",\n        \"description\": \"What old throw walk should scientist environment. Blue second fund.\\nDrug like up draw fire. Third policy cultural ask himself charge.\\nPrevent number wide pressure major. Great leg ball read safe.\",\n        \"created_at\": \"2021-02-24T22:25:38.370676Z\",\n        \"user\": {\n            \"id\": \"e29d4c85-b452-4cfd-b7e9-e442ad7518b2\",\n            \"email\": \"erobertson@hotmail.com\",\n            \"first_name\": \"Pamela Davis\",\n            \"last_name\": \"Julie Nicholson\",\n            \"username\": \"Charles Becker\",\n            \"password\": \"Michael Fox\"\n        },\n        \"likes\": [\n            \"c34d23cf-408e-48b6-a1c3-739423a5bad9\",\n            \"0d737b41-efed-46b1-ac5d-be5e09f8e61f\",\n            \"29307715-7696-4fac-a9fd-a8ccaeb3a396\",\n            \"d067ec3a-2437-4cab-9e9a-8c3c7e0f1aee\",\n            \"9d9be2cf-03f2-4e0c-befa-693618d943f2\",\n            \"38785f93-8937-4953-9f24-55d1ef1f8aec\",\n            \"223aa27e-e48b-4cb8-b832-107411758a66\",\n            \"fa1f1d85-fa35-4ad1-be6c-b6daa31716e8\",\n            \"5fbbd5d4-3edc-4748-a77c-56d640d2bb6b\",\n            \"4cac6b8e-1857-42ba-92eb-305b9821c12a\"\n        ],\n        \"comments\": [\n            \"f48d0791-202d-4a1d-9255-9e5358a91515\",\n            \"90af325f-4625-41db-b907-d6a7312cb61f\",\n            \"8741b129-a34b-4c74-8865-2ce78d4c57dd\",\n            \"f961b508-71c6-46e9-92d1-3bd3a3cc72bf\",\n            \"2e3b51a0-7277-415d-bc29-960f0bfbde28\",\n            \"a8b8445f-f00e-4b20-afcf-56ed14e47d7d\",\n            \"1ce19e4f-a329-4ee0-8325-b2eb8554939c\",\n            \"ea6ee1f3-8fc9-44ad-b65e-3329d7a62511\",\n            \"94bc3715-0821-4a98-974e-231dddb5e260\",\n            \"d86f3e04-dba8-40be-93d1-11fe5c386361\"\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/likes/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"likes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one like",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/like/{{id_like}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"like",
+								"{{id_like}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a like",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"cambioUPDATEeojwongeigwoeignwignwoegnwoin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/like/{{id_like}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"like",
+								"{{id_like}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a like",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/like/{{id_like}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"like",
+								"{{id_like}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Get all comments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.globals.set(\"id_comment\", pm.response.json()[0].id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/comments",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"body\": \"dsogsnjgjsoegnroegnsorgnsorginsrognsosrgno\",\n    \"user\": {\n        \"id\": \"e29d4c85-b452-4cfd-b7e9-e442ad7518b2\",\n        \"email\": \"erobertson@hotmail.com\",\n        \"first_name\": \"Pamela Davis\",\n        \"last_name\": \"Julie Nicholson\",\n        \"username\": \"Charles Becker\",\n        \"password\": \"Michael Fox\",\n        \"phone_number\": \"015.506.0741x5229\",\n        \"description\": \"Line happy page radio conference. Traditional with put outside. Top continue person size.\\nChoice character able central plant see. Training within rate just.\",\n        \"created_at\": \"2021-02-24T22:25:38.366681Z\"\n    },\n    \"post\": {\n        \"id\": \"e510c729-3268-41b3-becc-864c8c647a10\",\n        \"image\": \"https://dummyimage.com/237x428\",\n        \"description\": \"Agreement not within. Use which trouble former. Power pretty end soldier. Available mother serve machine adult notice dark close.\",\n        \"created_at\": \"2021-02-24T23:46:05.414482Z\",\n        \"user\": {\n            \"id\": \"fe7e1c57-665d-455d-ac79-ea3f84fdde6d\",\n            \"email\": \"johnsonderek@gmail.com\",\n            \"avatar_image\": \"https://www.lorempixel.com/740/690\",\n            \"first_name\": \"Michael Flores\",\n            \"last_name\": \"Mark Alexander\",\n            \"username\": \"Mrs. Christy Lewis MD\",\n            \"password\": \"Rachel Adams\",\n            \"phone_number\": \"106-896-4835x53820\",\n            \"description\": \"Seem must rock shoulder letter factor write. Board health answer itself for identify.\",\n            \"created_at\": \"2021-02-24T23:46:05.402226Z\"\n        },\n        \"likes\": [\n            \"ca4ccc48-0ce3-41ab-940a-6ac6b88373d7\",\n            \"33909aab-5b9f-4f63-a2c8-2357d8256804\",\n            \"e9257b30-6d22-4be3-befe-f1bc0ba308df\",\n            \"1c53b243-06fb-42dd-be1a-c655af789661\",\n            \"1a7eba2d-a889-4f03-b06d-25dbf04ece49\",\n            \"5291f4d9-ea0d-4aaa-a8cd-bc810711fba8\",\n            \"fcb6df17-df3a-4513-b83b-e178d984d788\",\n            \"2a4bd3ff-4aab-4283-a05d-9ff2a983343e\",\n            \"57b948b8-3642-4ca9-b46d-8a4c9c3051cb\",\n            \"22748816-739b-42e8-bc4e-7d63a98f15b6\"\n        ],\n        \"comments\": [\n            \"8ffc3e38-5b68-4687-b5d6-2ae0cabba1d0\",\n            \"7cab0a5c-a63f-459d-908a-d08973b9c0e6\",\n            \"8e1838b1-abae-470e-94c1-4f1a51ce3817\",\n            \"1ffe6ab5-6633-4b0a-9792-a3cb6e2f22a8\",\n            \"973f559f-831d-4af4-bab1-b7d275b022a2\",\n            \"13684cec-c8d6-4f57-a35e-e47bc01b0da7\",\n            \"10d164e2-e6ef-4d1b-b034-802603e9284d\",\n            \"0ce48cdf-b2ac-4035-aa2a-bfacb5387c75\",\n            \"592e07a1-f9a0-4069-ae93-0642bebabf8f\",\n            \"9cdb7029-d89b-4e1a-b9f3-f9213dba62f2\"\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/comments/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one comment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/comment/{{id_comment}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comment",
+								"{{id_comment}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a comment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"body\": \"eaoieognjjjdjdjCAAAAMMMMBIIIIOOO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/comment/{{id_comment}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comment",
+								"{{id_comment}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/comment/{{id_comment}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comment",
+								"{{id_comment}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Messages",
+			"item": [
+				{
+					"name": "Get all messages",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.globals.set(\"id_message\", pm.response.json()[0].id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/messages",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"HOLA! QUE TAL?\",\n    \"user\": {\n        \"id\": \"e29d4c85-b452-4cfd-b7e9-e442ad7518b2\",\n        \"email\": \"erobertson@hotmail.com\",\n        \"first_name\": \"Pamela Davis\",\n        \"last_name\": \"Julie Nicholson\",\n        \"username\": \"Charles Becker\",\n        \"password\": \"Michael Fox\",\n        \"phone_number\": \"015.506.0741x5229\",\n        \"description\": \"Line happy page radio conference. Traditional with put outside. Top continue person size.\\nChoice character able central plant see. Training within rate just.\",\n        \"created_at\": \"2021-02-24T22:25:38.366681Z\"\n    },\n    \"chat\": {\n        \"id\": \"78dcaead-8d37-4007-8dee-fe4ef441a4c1\",\n        \"messages\": [\n            \"a397e030-945f-493d-a28e-2c0da7c31450\",\n            \"2230a6b0-99ea-4c50-a38b-600c9f1e22fb\",\n            \"fb16527d-907a-414f-8847-3240c70601e2\",\n            \"25c48936-da7e-4739-be26-070690e658e6\",\n            \"2afa3942-5c2b-42f7-9166-588072f9d218\",\n            \"f0650e51-f9f6-4cfd-8afd-961c2cf0692b\",\n            \"4a3e66d3-e2f3-4d8e-85c3-c3d632c9633f\",\n            \"5cd938b4-3b22-4191-a71c-e4d6266934cd\",\n            \"e364b38d-2a28-4f74-9888-b7c1c16f9d82\",\n            \"7d7a4bf0-6acf-48a3-85be-87369f2d6acb\"\n        ],\n        \"user\": {\n            \"id\": \"e29d4c85-b452-4cfd-b7e9-e442ad7518b2\",\n            \"email\": \"erobertson@hotmail.com\",\n            \"first_name\": \"Pamela Davis\",\n            \"last_name\": \"Julie Nicholson\",\n            \"username\": \"Charles Becker\",\n            \"password\": \"Michael Fox\",\n            \"phone_number\": \"015.506.0741x5229\",\n            \"description\": \"Line happy page radio conference. Traditional with put outside. Top continue person size.\\nChoice character able central plant see. Training within rate just.\",\n            \"created_at\": \"2021-02-24T22:25:38.366681Z\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/messages/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"messages",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one message",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/message/{{id_message}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"message",
+								"{{id_message}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a message",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"HOLA! QUE TAL? CAMBIO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/message/{{id_message}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"message",
+								"{{id_message}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a message",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/message/{{id_message}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"message",
+								"{{id_message}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "tokenName",
+				"value": "auth",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{superuser}}",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "write read",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "1234",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "{{client_secret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{client_id}}",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "{{base_url}}/o/token/",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000"
+		},
+		{
+			"key": "client_secret",
+			"value": "ZHkD86IAKGstyf0XxJAAHyTLK9C4ZUoublzvUwbThMRccUEV6JigtOgoEw1uY5f8dviXlWwViVnz2ThYmLYebwoAYW8cS0zU8pmVksUyo4ldMtAv5mGPgh67K0sdUpQu"
+		},
+		{
+			"key": "client_id",
+			"value": "TvYikzZrpcs3W2RMreJO8TZOXYx3m4eOxUKWwgHX"
+		},
+		{
+			"key": "superuser",
+			"value": "grupo2"
+		}
+	]
+}
